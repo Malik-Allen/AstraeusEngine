@@ -1,5 +1,6 @@
 #include "RendererManager.h"
 #include "../../Apps/SceneManager.h"
+#include "../../World/World.h"
 #include "GraphicsAPI.h"
 
 #include <DebugLog.h>
@@ -12,7 +13,8 @@
 
 RendererManager::RendererManager() :
 	m_currentRenderer( nullptr ),
-	m_sceneManager( nullptr )
+	m_sceneManager( nullptr ),
+	m_world( nullptr )
 {}
 
 RendererManager::~RendererManager()
@@ -26,17 +28,24 @@ RendererManager::~RendererManager()
 
 bool RendererManager::OnCreate( const RendererInfo& rendererInfo )
 {
+	if( m_world == nullptr )
+	{
+		DEBUG_LOG( LOG::INFO, "Failed to create renderer manager: world object is nullptr, SetWorld(), before calling OnCreate()" );
+		CONSOLE_LOG( LOG::INFO, "Failed to create renderer manager: world object is nullptr, SetWorld(), before calling OnCreate()" );
+		return false;
+	}
+
 #if GRAPHICS_API == GRAPHICS_OPENGL
 	DEBUG_LOG( LOG::INFO, "Creating OpenGL Renderer..." );
 	CONSOLE_LOG( LOG::INFO, "Creating OpenGL Renderer..." );
 
-	m_renderer = new OpenGL::Renderer_OpenGL();
+	m_currentRenderer = m_world->GetECS()->RegisterSystem<OpenGL::Renderer_OpenGL>();
 
 #elif GRAPHICS_API == GRAPHICS_VULKAN
 	DEBUG_LOG( LOG::INFO, "Creating Vulkan Renderer..." );
 	CONSOLE_LOG( LOG::INFO, "Creating Vulkan Renderer..." );
 
-	m_currentRenderer = new Vulkan::Renderer_Vulkan();
+	m_currentRenderer = m_world->GetECS()->RegisterSystem<Vulkan::Renderer_Vulkan>();
 
 #endif
 
@@ -62,6 +71,8 @@ void RendererManager::Update( const float deltaTime )
 {
 	if( m_sceneManager != nullptr )
 	{
-		m_currentRenderer->RenderScene( m_sceneManager->GetCurrentScene() );
+		// Since IRenderer is a System that exists inside of an ECS, we don't need to call update, it will have access to the components it needs
+			// And anything it doesn't have we can just run a ECS::Parser on it to get it
+		// m_currentRenderer->RenderScene( m_sceneManager->GetCurrentScene() );
 	}
 }

@@ -18,7 +18,7 @@ namespace Vulkan
 			CONSOLE_LOG( LOG::INFO, "Failed to create vulkan renderer: window is nullptr" );
 			return false;
 		}
-
+		
 		return true;
 	}
 

@@ -9,6 +9,7 @@
 class Window;
 class Camera;
 class IScene;
+class RendererManager;
 
 struct RendererInfo
 {

@@ -50,13 +50,15 @@ bool IApp::OnCreate( const AppInfo& appInfo )
 		return false;
 	}
 
+	m_rendererManager->SetWorld( GetWorld() );
+	m_rendererManager->SetSceneManager( m_sceneManager );
 	if( m_rendererManager->OnCreate( appInfo.rendererInfo ) == false )
 	{
 		DEBUG_LOG( LOG::INFO, "Failed to create app: failed to create renderer manager" );
 		CONSOLE_LOG( LOG::INFO, "Failed to create app: failed to create renderer manager" );
 		return false;
 	}
-	m_rendererManager->SetSceneManager( m_sceneManager );
+	
 
 	return IApp_OnCreate();
 }

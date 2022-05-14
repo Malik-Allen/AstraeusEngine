@@ -4,6 +4,7 @@
 #include "Renderer.h"
 
 class SceneManager;
+class World;
 
 class RendererManager
 {
@@ -20,9 +21,15 @@ public:
 		m_sceneManager = sceneManager;
 	}
 
+	inline void SetWorld( World* world )
+	{
+		m_world = world;
+	}
+
 private:
 	IRenderer* m_currentRenderer;
 	SceneManager* m_sceneManager;
+	World* m_world;
 };
 
 
