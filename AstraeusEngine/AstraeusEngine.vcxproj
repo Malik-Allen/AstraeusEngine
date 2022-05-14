@@ -17,7 +17,6 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -53,49 +52,60 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="Shared" >
+  <ImportGroup Label="Shared">
   </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)..\Achilles\Debug\include;$(SolutionDir)..\Achilles\ECS\include;$(SolutionDir)..\Achilles\Debug;$(IncludePath)</IncludePath>
+    <PublicIncludeDirectories>$(SolutionDir)..\Achilles\Debug;$(PublicIncludeDirectories)</PublicIncludeDirectories>
+    <LibraryPath>$(SolutionDir)..\Achilles\Lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\VulkanSDK\1.3.211.0\Include;$(SolutionDir)..\glad\include;$(SolutionDir)..\glm;$(SolutionDir)..\glfw\include;$(SolutionDir)..\Achilles\Debug\include;$(SolutionDir)..\Achilles\ECS\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\glfw\glfw-build\src\Debug;$(SolutionDir)..\Achilles\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)..\Achilles\Debug\include;$(SolutionDir)..\Achilles\ECS\include;$(IncludePath)</IncludePath>
+    <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>$(SolutionDir)..\Achilles\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)..\tinyobjloader;C:\VulkanSDK\1.3.211.0\Include;$(SolutionDir)..\glad\include;$(SolutionDir)..\glm;$(SolutionDir)..\glfw\include;$(SolutionDir)..\Achilles\Debug\include;$(SolutionDir)..\Achilles\ECS\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\VulkanSDK\1.3.211.0\Lib;$(SolutionDir)..\glfw\glfw-build\src\Debug;$(SolutionDir)..\Achilles\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
-
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Achilles\Debug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ecs32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -106,12 +116,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ecs32.lib;debugger32.lib;%(AdditionalDependencies);glfw3.lib;opengl32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -120,10 +132,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -134,16 +148,57 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ecs.lib;debugger.lib;vulkan-1.lib;%(AdditionalDependencies);glfw3.lib;opengl32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\glad\src\glad.c" />
+    <ClCompile Include="Engine\Apps\App.cpp" />
+    <ClCompile Include="Engine\Apps\SceneManager.cpp" />
+    <ClCompile Include="Engine\World\Objects\Actor.cpp" />
+    <ClCompile Include="Engine\World\World.cpp" />
+    <ClCompile Include="Engine\Core\Engine.cpp" />
+    <ClCompile Include="Engine\Core\Timer\EngineClock.cpp" />
+    <ClCompile Include="Engine\Core\Timer\High-ResTimer.cpp" />
+    <ClCompile Include="Engine\Devices\Window.cpp" />
+    <ClCompile Include="Engine\Graphics\Core\3D\Mesh.cpp" />
+    <ClCompile Include="Engine\Graphics\Core\3D\MeshLoader.cpp" />
+    <ClCompile Include="Engine\Graphics\Core\3D\MeshComponent.cpp" />
+    <ClCompile Include="Engine\Graphics\Core\3D\TransformComponent.cpp" />
+    <ClCompile Include="Engine\Graphics\Core\Camera\Camera.cpp" />
+    <ClCompile Include="Engine\Graphics\Core\RendererManager.cpp" />
+    <ClCompile Include="Engine\Graphics\OpenGL\Core\RendererOpenGL.cpp" />
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\RendererVulkan.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Apps\App.h" />
+    <ClInclude Include="Engine\Apps\Scene.h" />
+    <ClInclude Include="Engine\Apps\SceneManager.h" />
+    <ClInclude Include="Engine\World\Objects\Actor.h" />
+    <ClInclude Include="Engine\Core\Engine.h" />
+    <ClInclude Include="Engine\Core\Timer\EngineClock.h" />
+    <ClInclude Include="Engine\Core\Timer\High-ResTimer.h" />
+    <ClInclude Include="Engine\World\World.h" />
+    <ClInclude Include="Engine\Devices\Window.h" />
+    <ClInclude Include="Engine\Graphics\Core\3D\Mesh.h" />
+    <ClInclude Include="Engine\Graphics\Core\3D\MeshLoader.h" />
+    <ClInclude Include="Engine\Graphics\Core\3D\MeshComponent.h" />
+    <ClInclude Include="Engine\Graphics\Core\3D\TransformComponent.h" />
+    <ClInclude Include="Engine\Graphics\Core\Camera\Camera.h" />
+    <ClInclude Include="Engine\Graphics\Core\GraphicsAPI.h" />
+    <ClInclude Include="Engine\Graphics\Core\Renderer.h" />
+    <ClInclude Include="Engine\Graphics\Core\RendererManager.h" />
+    <ClInclude Include="Engine\Graphics\OpenGL\Core\RendererOpenGL.h" />
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\RendererVulkan.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
