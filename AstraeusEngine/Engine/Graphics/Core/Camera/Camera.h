@@ -16,17 +16,20 @@ public:
 	glm::vec2 GetClippingPlanes() const;
 
 	void SetPosition( glm::vec3 position );
-	void SetRotation( const float yaw, const float pitch );
+	void SetRotation( glm::vec3 rotation );
 	void Zoom( const float y );
+
+	void Translate( glm::vec3 delta );
+	void Rotate( glm::vec3 delta );
 
 private:
 
 	glm::vec3			m_position;
+	// XYZ(Pitch, Roll, Yaw)
+	glm::vec3			m_rotation;
 	glm::mat4			m_perspective;
 	glm::mat4			m_orthographic;
 	float				m_fieldOfView;
-	float				m_yaw;
-	float				m_pitch;
 	float				m_nearPlane;
 	float				m_farPlane;
 	glm::vec3			m_forward;
@@ -34,7 +37,11 @@ private:
 	glm::vec3			m_right;
 	glm::vec3			m_worldUp;
 
+	float				m_movementSpeed;
+	float				m_rotationSpeed;
+
 	void Update();
+	void Update( const float deltaTime );
 
 };
 

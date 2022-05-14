@@ -6,6 +6,9 @@
 #include <string>
 #include <vector>
 
+/*
+*	Wrapper class that handles reading mesh files
+*/
 class MeshLoader
 {
 	MeshLoader() = delete;	// Static class, no constructor needed

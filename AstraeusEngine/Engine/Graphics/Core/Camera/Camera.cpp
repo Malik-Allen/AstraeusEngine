@@ -7,15 +7,17 @@
 Camera::Camera( const int windowWidth, const int windowHeight )
 {
 	m_position = glm::vec3( 0.0f, 0.0f, 25.0f );
+	m_rotation = glm::vec3( 0.0f, 0.0f, -90.0f );
 	m_fieldOfView = 45.0f;
 	m_forward = glm::vec3( 0.0f, 0.0f, -1.0f );
 	m_up = glm::vec3( 0.0f, 1.0f, 0.0f );
 	m_worldUp = m_up;
 	m_nearPlane = 0.5f;
 	m_farPlane = 100.0f;
-	m_yaw = -90.0f;
-	m_pitch = 0.0f;
 	m_right = glm::vec3();
+
+	m_movementSpeed = 1.0f;
+	m_rotationSpeed = 1.0f;
 
 	float aspect = static_cast< float >( windowWidth ) / static_cast< float >( windowHeight );
 
@@ -66,10 +68,9 @@ void Camera::SetPosition( glm::vec3 position )
 	Update();
 }
 
-void Camera::SetRotation( const float yaw, const float pitch )
+void Camera::SetRotation( glm::vec3 rotation )
 {
-	m_yaw = yaw;
-	m_pitch = pitch;
+	m_rotation = rotation;
 	Update();
 }
 
@@ -82,11 +83,23 @@ void Camera::Zoom( const float y )
 	Update();
 }
 
+void Camera::Translate( glm::vec3 delta )
+{
+	m_position += delta;
+	Update();
+}
+
+void Camera::Rotate( glm::vec3 delta )
+{
+	m_rotation += delta;
+	Update();
+}
+
 void Camera::Update()
 {
-	m_forward.x = cos( glm::radians( m_yaw ) ) * cos( glm::radians( m_pitch ) );
-	m_forward.y = sin( glm::radians( m_pitch ) );
-	m_forward.z = sin( glm::radians( m_yaw ) ) * cos( glm::radians( m_pitch ) );
+	m_forward.x = cos( glm::radians( m_rotation.z ) ) * cos( glm::radians( m_rotation.x ) );
+	m_forward.y = sin( glm::radians( m_rotation.x ) );
+	m_forward.z = sin( glm::radians( m_rotation.z ) ) * cos( glm::radians( m_rotation.x ) );
 
 	m_forward = glm::normalize( m_forward );
 
@@ -94,3 +107,6 @@ void Camera::Update()
 
 	m_up = glm::normalize( glm::cross( m_right, m_forward ) );
 }
+
+void Camera::Update(const float deltaTime )
+{}

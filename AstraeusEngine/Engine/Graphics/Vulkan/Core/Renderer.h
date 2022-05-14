@@ -1,24 +1,26 @@
-#ifndef RENDERERVULKAN_H
-#define RENDERERVULKAN_H
+#pragma once
 
 #include "../../Core/Renderer.h"
+#include "Instance.h"
 
-namespace Vulkan
+namespace Hephaestus
 {
-	class Renderer_Vulkan : public IRenderer
+	class Renderer : public IRenderer
 	{
 	public:
-		Renderer_Vulkan();
-		~Renderer_Vulkan();
+		Renderer();
+		~Renderer();
 
 		virtual bool OnCreate( const RendererInfo& rendererInfo ) override final;
 		virtual void OnDestroy() override final;
 		virtual void RenderScene( IScene* scene ) override final;
 
 	private:
+		Instance m_instance;
+
+		virtual void Update( const float deltaTime ) override final;
 		virtual void Render( MeshComponent* mesh, TransformComponent* transform, Camera* camera ) override final;
 	};
 };
 
-#endif // !RENDERERVULKAN_H
 

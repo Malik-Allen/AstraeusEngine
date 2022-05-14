@@ -8,7 +8,7 @@
 #if GRAPHICS_API == GRAPHICS_OPENGL
 #include "../OpenGL/Core/RendererOpenGL.h"
 #elif GRAPHICS_API == GRAPHICS_VULKAN
-#include "../Vulkan/Core/RendererVulkan.h"
+#include "../Vulkan/Core/Renderer.h"
 #endif
 
 RendererManager::RendererManager() :
@@ -45,7 +45,7 @@ bool RendererManager::OnCreate( const RendererInfo& rendererInfo )
 	DEBUG_LOG( LOG::INFO, "Creating Vulkan Renderer..." );
 	CONSOLE_LOG( LOG::INFO, "Creating Vulkan Renderer..." );
 
-	m_currentRenderer = m_world->GetECS()->RegisterSystem<Vulkan::Renderer_Vulkan>();
+	m_currentRenderer = m_world->GetECS()->RegisterSystem<Hephaestus::Renderer>();
 
 #endif
 

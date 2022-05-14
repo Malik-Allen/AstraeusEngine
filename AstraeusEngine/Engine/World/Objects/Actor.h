@@ -9,6 +9,9 @@
 class World;
 class TransformComponent;
 
+/*
+*	Used to provide information about the spawn of an actor
+*/
 struct ActorSpawnInfo
 {
 	ActorSpawnInfo() :
@@ -29,7 +32,10 @@ struct ActorSpawnInfo
 };
 
 /*
-* 
+*	The Actor class represents an object instantiated in the world, that has a transform component
+*	Actor is responsible for maintaining it's relationships with it's children and parent
+*	Components can be added to and removed from actors
+*	Each Actor hold an entityId which represents their data inside of the ECS
 */
 class Actor
 {

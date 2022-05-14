@@ -6,6 +6,10 @@
 class SceneManager;
 class World;
 
+/*
+*	Renderer Manager is responsible for creating and registering the IRenderer of the macro-defined graphics api
+*	Passing along RendererInformation upon its creation
+*/
 class RendererManager
 {
 public:

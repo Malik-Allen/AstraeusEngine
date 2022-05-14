@@ -162,7 +162,8 @@
     <ClCompile Include="..\..\glad\src\glad.c" />
     <ClCompile Include="Engine\Apps\App.cpp" />
     <ClCompile Include="Engine\Apps\SceneManager.cpp" />
-    <ClCompile Include="Engine\Graphics\Vulkan\Core\3D\MeshVulkan.cpp" />
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\3D\Mesh.cpp" />
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Instance.cpp" />
     <ClCompile Include="Engine\World\Objects\Actor.cpp" />
     <ClCompile Include="Engine\World\World.cpp" />
     <ClCompile Include="Engine\Core\Engine.cpp" />
@@ -175,14 +176,15 @@
     <ClCompile Include="Engine\Graphics\Core\Camera\Camera.cpp" />
     <ClCompile Include="Engine\Graphics\Core\RendererManager.cpp" />
     <ClCompile Include="Engine\Graphics\OpenGL\Core\RendererOpenGL.cpp" />
-    <ClCompile Include="Engine\Graphics\Vulkan\Core\RendererVulkan.cpp" />
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Renderer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Apps\App.h" />
     <ClInclude Include="Engine\Apps\Scene.h" />
     <ClInclude Include="Engine\Apps\SceneManager.h" />
-    <ClInclude Include="Engine\Graphics\Vulkan\Core\3D\MeshVulkan.h" />
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\3D\Mesh.h" />
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Instance.h" />
     <ClInclude Include="Engine\World\Objects\Actor.h" />
     <ClInclude Include="Engine\Core\Engine.h" />
     <ClInclude Include="Engine\Core\Timer\EngineClock.h" />
@@ -198,7 +200,7 @@
     <ClInclude Include="Engine\Graphics\Core\Renderer.h" />
     <ClInclude Include="Engine\Graphics\Core\RendererManager.h" />
     <ClInclude Include="Engine\Graphics\OpenGL\Core\RendererOpenGL.h" />
-    <ClInclude Include="Engine\Graphics\Vulkan\Core\RendererVulkan.h" />
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Renderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

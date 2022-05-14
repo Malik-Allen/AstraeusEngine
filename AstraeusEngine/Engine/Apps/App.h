@@ -11,7 +11,7 @@ class World;
 class Window;
 
 /*
-* 
+*	Information about the application, provided during the creation on an application
 */
 struct AppInfo
 {
@@ -23,7 +23,8 @@ struct AppInfo
 };
 
 /*
-* 
+*	The App interface will allow you to create an application and have it manage what is created and destroying during the lifetime of the application
+*	Inherited classes will be able to spawn actors, create and register system
 */
 class IApp
 {

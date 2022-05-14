@@ -9,6 +9,9 @@
 class Camera;
 class IMesh;
 
+/*
+*	MeshComponentInfo is used during the creation of component to passed on information for assets to load in for use by the corresponding mesh component
+*/
 struct MeshComponentInfo
 {
 	MeshComponentInfo() :
@@ -33,6 +36,10 @@ struct MeshComponentInfo
 
 };
 
+/*
+*	Mesh Component functions as a bucket for IMesh*, no matter the graphics api, any type of mesh can be held by the mesh component
+*	Keeping this component platform agnostic allows the renderer to Render(MeshComponent, TrnaformComponent, Camera) without knowing the graphics api
+*/
 class MeshComponent : public ECS::Component
 {
 public:

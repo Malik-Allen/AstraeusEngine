@@ -11,6 +11,9 @@ class Camera;
 class IScene;
 class RendererManager;
 
+/*
+* Renderer details and information, provided on creation of renderer
+*/
 struct RendererInfo
 {
 	RendererInfo( const std::string& _appName, const std::string& _engineName,
@@ -38,6 +41,11 @@ struct RendererInfo
 	Window* window;
 };
 
+/*
+*	The IRenderer System is responsible for renderering mesh components
+*	When this class is inherited you will be able to customize your own renderer to a specific graphics api etc. with full control of order of operation when it comes to rendering
+*	
+*/
 class IRenderer : public ECS::System<MeshComponent, TransformComponent>
 {
 	friend class RendererManager;
@@ -77,7 +85,15 @@ private:
 	RendererManager* m_rendererManager;
 
 	/*
-	* 
+	*	ISystem: Update(), ECS::World->SystemManager->Update()
+	*/
+	virtual void Update( const float deltaTime ) override = 0;
+
+	/*
+	*	Performs the render for the passed mesh component
+	*	@param	MeshComponent:		The mesh component to render
+	*	@param	TransformComponent:		The transform component to use for the location of the mesh
+	*	@param	Camera:		The camera that the mesh will be renderered to
 	*/
 	virtual void Render( MeshComponent* mesh, TransformComponent* transform, Camera* camera ) = 0;
 };
