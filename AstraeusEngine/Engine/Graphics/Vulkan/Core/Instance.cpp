@@ -12,13 +12,13 @@ namespace Hephaestus
 	Instance::~Instance()
 	{}
 
-	VkResult Instance::OnCreate( const InstanceInfo & instanceInfo )
+	VkResult Instance::OnCreate( const InstanceConstructor& instanceConstructor )
 	{
 		VkApplicationInfo appInfo = {};
 		appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-		appInfo.pApplicationName = instanceInfo.applicationName.c_str();
-		appInfo.pEngineName = instanceInfo.engineName.c_str();
-		appInfo.apiVersion = instanceInfo.version;
+		appInfo.pApplicationName = instanceConstructor.applicationName.c_str();
+		appInfo.pEngineName = instanceConstructor.engineName.c_str();
+		appInfo.apiVersion = instanceConstructor.version;
 
 		// Enable extensions required by GLFW
 		uint32_t extensionCount = 0;
@@ -34,7 +34,7 @@ namespace Hephaestus
 		instanceCreateInfo.pApplicationInfo = &appInfo;
 		if( instanceExtensions.size() > 0 )
 		{
-			if( instanceInfo.enableValidationLayers )
+			if( instanceConstructor.enableValidationLayers )
 			{
 				instanceExtensions.push_back( VK_EXT_DEBUG_UTILS_EXTENSION_NAME );
 			}
@@ -42,7 +42,7 @@ namespace Hephaestus
 			instanceCreateInfo.ppEnabledExtensionNames = instanceExtensions.data();
 		}
 
-		if( instanceInfo.enableValidationLayers )
+		if( instanceConstructor.enableValidationLayers )
 		{
 			// The VK_LAYER_KHRONOS_validation contains all current validation functionality.
 			// Note that on Android this layer requires at least NDK r20

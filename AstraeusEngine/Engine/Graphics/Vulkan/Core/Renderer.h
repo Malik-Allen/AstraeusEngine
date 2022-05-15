@@ -1,10 +1,12 @@
 #pragma once
 
 #include "../../Core/Renderer.h"
-#include "Instance.h"
+#include <memory>
 
 namespace Hephaestus
 {
+	class Instance;
+
 	class Renderer : public IRenderer
 	{
 	public:
@@ -16,7 +18,7 @@ namespace Hephaestus
 		virtual void RenderScene( IScene* scene ) override final;
 
 	private:
-		Instance m_instance;
+		std::unique_ptr<Instance> m_instance;
 
 		virtual void Update( const float deltaTime ) override final;
 		virtual void Render( MeshComponent* mesh, TransformComponent* transform, Camera* camera ) override final;

@@ -7,16 +7,16 @@
 namespace Hephaestus
 {
 
-	struct InstanceInfo
+	struct InstanceConstructor
 	{
-		InstanceInfo() :
+		InstanceConstructor() :
 			applicationName( "" ),
 			engineName( "" ),
 			version( 0 ),
 			enableValidationLayers( false )
 		{};
 
-		InstanceInfo(const std::string& _applicationName, const std::string& _engineName, 
+		InstanceConstructor(const std::string& _applicationName, const std::string& _engineName,
 			const int _version, const bool _enableValidationLayers ) :
 			applicationName( _applicationName ),
 			engineName( _engineName ),
@@ -44,7 +44,7 @@ namespace Hephaestus
 		Instance();
 		~Instance();
 
-		VkResult OnCreate( const InstanceInfo& instanceInfo );
+		VkResult OnCreate( const InstanceConstructor& instanceConstructor );
 		void OnDestroy();
 
 		inline const VkInstance& GetVkInstance() const
