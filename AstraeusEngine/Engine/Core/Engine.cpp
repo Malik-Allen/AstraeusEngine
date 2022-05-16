@@ -39,13 +39,11 @@ bool Engine::Init(
 	m_engineName = engineName;
 
 	DEBUG_LOG( LOG::INFO, "Initializing boot sequence... Please wait..." );
-	CONSOLE_LOG( LOG::INFO, "Initializing boot sequence... Please wait..." );
 
 	m_engineClock = new EngineClock();
 	if( m_engineClock == nullptr )
 	{
 		DEBUG_LOG( LOG::FATAL, "Failed to create engine clock!" );
-		CONSOLE_LOG( LOG::FATAL, "Failed to create engine clock!" );
 		return false;
 	}
 
@@ -63,14 +61,12 @@ bool Engine::Init(
 	if( m_window->OnCreate() == false )
 	{
 		DEBUG_LOG( LOG::FATAL, "Failed to create window!" );
-		CONSOLE_LOG( LOG::FATAL, "Failed to create window!" );
 		return false;
 	}
 
 #endif
-	
+
 	DEBUG_LOG( LOG::INFO, "Boot sequence complete!" );
-	CONSOLE_LOG( LOG::INFO, "Boot sequence complete!" );
 
 	PrintRuntimeInfo();
 
@@ -82,19 +78,16 @@ bool Engine::Init(
 bool Engine::LoadApplication( IApp* app )
 {
 	DEBUG_LOG( LOG::INFO, "Loading application... Please wait..." );
-	CONSOLE_LOG( LOG::INFO, "Loading application... Please wait..." );
 
 	if( app == nullptr )
 	{
 		DEBUG_LOG( LOG::WARNING, "Failed to laod application: App is null" );
-		CONSOLE_LOG( LOG::WARNING, "Failed to laod application: App is null" );
 		return false;
 	}
 
 	if( IsRunning() == false )
 	{
 		DEBUG_LOG( LOG::WARNING, "Failed to laod application: Engine is not running, call Init() before loading the Application" );
-		CONSOLE_LOG( LOG::WARNING, "Failed to laod application: Engine is not running, call Init() before loading the Application" );
 		return false;
 	}
 
@@ -111,14 +104,12 @@ bool Engine::LoadApplication( IApp* app )
 	if( m_app->OnCreate( appInfo ) == false )
 	{
 		DEBUG_LOG( LOG::ERRORLOG, "Failed to create application!" );
-		CONSOLE_LOG( LOG::ERRORLOG, "Failed to create application!" );
 		return false;
 	}
 
 	m_isAppRunning = true;
 
-	DEBUG_LOG( LOG::INFO, "Load complete!");
-	CONSOLE_LOG( LOG::INFO, "Load complete!");
+	DEBUG_LOG( LOG::INFO, "Load complete!" );
 
 	PrintRuntimeInfo();
 
@@ -222,19 +213,16 @@ void Engine::Update( const float deltaTime )
 
 void Engine::PrintRuntimeInfo()
 {
-	DEBUG_LOG( LOG::INFO, m_engineName + " is running @ " + std::to_string( m_fps ) + " fps" );
-	CONSOLE_LOG( LOG::INFO, m_engineName + " is running @ " + std::to_string( m_fps ) + " fps" );
+	DEBUG_LOG( LOG::INFO, "{} is running @ {}fps", m_engineName, std::to_string( m_fps ) );
 
 	if( m_window != nullptr )
 	{
-		DEBUG_LOG( LOG::INFO, m_engineName + "'s Window is running @ " + std::to_string( m_window->GetExtent().width ) + " x " + std::to_string( m_window->GetExtent().height ) );
-		CONSOLE_LOG( LOG::INFO, m_engineName + "'s Window is running @ " + std::to_string( m_window->GetExtent().width ) + " x " + std::to_string( m_window->GetExtent().height ) );
+		DEBUG_LOG( LOG::INFO, "Window is running @ {} x {}", std::to_string( m_window->GetExtent().width ), std::to_string( m_window->GetExtent().height ) );
 	}
 
 	if( m_isAppRunning && m_app != nullptr )
 	{
-		DEBUG_LOG( LOG::INFO, m_engineName + " is running the " + m_app->GetAppName() + " application" );
-		CONSOLE_LOG( LOG::INFO, m_engineName + " is running the " + m_app->GetAppName() + " application" );
+		DEBUG_LOG( LOG::INFO, "{} is running", m_app->GetAppName() );
 	}
 }
 

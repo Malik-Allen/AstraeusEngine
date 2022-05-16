@@ -9,8 +9,7 @@ namespace Hephaestus
 		m_physicalDevice( deviceConstructor.physicalDevice ),
 		m_surface( deviceConstructor.surface )
 	{
-		DEBUG_LOG( LOG::INFO, "Selected GPU: " + std::string( m_physicalDevice.GetProperties().deviceName ) );
-		CONSOLE_LOG( LOG::INFO, "Selected GPU: " + std::string( m_physicalDevice.GetProperties().deviceName ) );
+		DEBUG_LOG( LOG::INFO, "Selected GPU: {}", std::string( m_physicalDevice.GetProperties().deviceName ) );
 	}
 
 	Device::~Device()

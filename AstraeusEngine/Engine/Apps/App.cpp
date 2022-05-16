@@ -39,14 +39,12 @@ bool IApp::OnCreate( const AppInfo& appInfo )
 	if( m_world->OnCreate() == false )
 	{
 		DEBUG_LOG( LOG::INFO, "Failed to create app: failed to create world" );
-		CONSOLE_LOG( LOG::INFO, "Failed to create app: failed to create world" );
 		return false;
 	}
 
 	if( m_sceneManager->OnCreate() == false )
 	{
 		DEBUG_LOG( LOG::INFO, "Failed to create app: failed to create scene manager" );
-		CONSOLE_LOG( LOG::INFO, "Failed to create app: failed to create scene manager" );
 		return false;
 	}
 
@@ -55,7 +53,6 @@ bool IApp::OnCreate( const AppInfo& appInfo )
 	if( m_rendererManager->OnCreate( appInfo.rendererInfo ) == false )
 	{
 		DEBUG_LOG( LOG::INFO, "Failed to create app: failed to create renderer manager" );
-		CONSOLE_LOG( LOG::INFO, "Failed to create app: failed to create renderer manager" );
 		return false;
 	}
 	

@@ -75,7 +75,6 @@ namespace Hephaestus
 		if( vkCreateInstance( &instanceCreateInfo, nullptr, &m_vkInstance ) != VK_SUCCESS )
 		{
 			DEBUG_LOG( LOG::ERRORLOG, "Failed to create Vulkan instance" );
-			CONSOLE_LOG( LOG::ERRORLOG, "Failed to create Vulkan instance" );
 			throw std::runtime_error( "Failed to create Vulkan instance" );
 		}
 
@@ -102,7 +101,6 @@ namespace Hephaestus
 		if( vkEnumeratePhysicalDevices( m_vkInstance, &physical_device_count, nullptr ) != VK_SUCCESS )
 		{
 			DEBUG_LOG( LOG::ERRORLOG, "ERROR! TODO: Implement something like VK_CHECK from vulkan_samples if you want more information and throw a run_time error" );
-			CONSOLE_LOG( LOG::ERRORLOG, "ERROR! TODO: Implement something like VK_CHECK from vulkan_samples if you want more information and throw a run_time error" );
 			throw std::runtime_error( "Failed to select a physical device!" );
 		}
 
@@ -117,7 +115,6 @@ namespace Hephaestus
 		if( vkEnumeratePhysicalDevices( m_vkInstance, &physical_device_count, physical_devices.data() ) != VK_SUCCESS )
 		{
 			DEBUG_LOG( LOG::ERRORLOG, "ERROR! TODO: Implement something like VK_CHECK from vulkan_samples if you want more information and throw a run_time error" );
-			CONSOLE_LOG( LOG::ERRORLOG, "ERROR! TODO: Implement something like VK_CHECK from vulkan_samples if you want more information and throw a run_time error" );
 			throw std::runtime_error( "Failed to register vulkan physical devices!" );
 		}
 
@@ -151,8 +148,7 @@ namespace Hephaestus
 
 		// Otherwise just pick the first one
 		DEBUG_LOG( LOG::WARNING, "Couldn't find a discrete physical device, picking default GPU" );
-		CONSOLE_LOG( LOG::WARNING, "Couldn't find a discrete physical device, picking default GPU" );
-
+		
 		return *m_gpus.at( 0 );
 	}
 
@@ -171,7 +167,6 @@ namespace Hephaestus
 
 		// Otherwise just pick the first one
 		DEBUG_LOG( LOG::WARNING, "Couldn't find a discrete physical device, picking default GPU" );
-		CONSOLE_LOG( LOG::WARNING, "Couldn't find a discrete physical device, picking default GPU" );
 		return *m_gpus.at( 0 );
 	}
 

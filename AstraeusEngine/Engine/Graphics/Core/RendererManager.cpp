@@ -31,20 +31,17 @@ bool RendererManager::OnCreate( const RendererInfo& rendererInfo )
 	if( m_world == nullptr )
 	{
 		DEBUG_LOG( LOG::INFO, "Failed to create renderer manager: world object is nullptr, SetWorld(), before calling OnCreate()" );
-		CONSOLE_LOG( LOG::INFO, "Failed to create renderer manager: world object is nullptr, SetWorld(), before calling OnCreate()" );
 		return false;
 	}
 
 #if GRAPHICS_API == GRAPHICS_OPENGL
 	DEBUG_LOG( LOG::INFO, "Creating OpenGL Renderer..." );
-	CONSOLE_LOG( LOG::INFO, "Creating OpenGL Renderer..." );
-
+	
 	m_currentRenderer = m_world->GetECS()->RegisterSystem<OpenGL::Renderer_OpenGL>();
 
 #elif GRAPHICS_API == GRAPHICS_VULKAN
 	DEBUG_LOG( LOG::INFO, "Creating Vulkan Renderer..." );
-	CONSOLE_LOG( LOG::INFO, "Creating Vulkan Renderer..." );
-
+	
 	m_currentRenderer = m_world->GetECS()->RegisterSystem<Hephaestus::Renderer>();
 
 #endif

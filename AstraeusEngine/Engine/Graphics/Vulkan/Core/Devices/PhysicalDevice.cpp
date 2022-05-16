@@ -13,8 +13,7 @@ namespace Hephaestus
 		vkGetPhysicalDeviceProperties( m_physicalDevice, &properties );
 		vkGetPhysicalDeviceMemoryProperties( m_physicalDevice, &memoryProperties );
 
-		DEBUG_LOG( LOG::INFO, "Found GPU: " + std::string( properties.deviceName ) );
-		CONSOLE_LOG( LOG::INFO, "Found GPU: " + std::string( properties.deviceName ) );
+		DEBUG_LOG( LOG::INFO, "Found GPU: {}", std::string( properties.deviceName ) );
 
 		uint32_t queue_family_properties_count = 0;
 		vkGetPhysicalDeviceQueueFamilyProperties( m_physicalDevice, &queue_family_properties_count, nullptr );

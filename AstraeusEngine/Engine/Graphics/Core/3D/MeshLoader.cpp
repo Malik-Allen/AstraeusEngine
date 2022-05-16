@@ -13,15 +13,12 @@ MeshData MeshLoader::LoadMesh( const std::string& meshFileName )
 	std::vector<tinyobj::shape_t> shapes;
 	std::vector<tinyobj::material_t> materials;
 	std::string warn, err;
-	DEBUG_LOG( LOG::INFO, "Loading SubMesh @ " + relativeFilePath );
-	CONSOLE_LOG( LOG::INFO, "Loading SubMesh @ " + relativeFilePath );
+	DEBUG_LOG( LOG::INFO, "Loading SubMesh from: {}", relativeFilePath );
 
 	if( !tinyobj::LoadObj( &attrib, &shapes, &materials, &warn, &err, relativeFilePath.c_str() ) )
 	{
-		DEBUG_LOG( LOG::ERRORLOG, "Failed to load submesh: Cannot open mesh file @ " + relativeFilePath );
-		CONSOLE_LOG( LOG::ERRORLOG, "Failed to load submesh: Cannot open mesh file @ " + relativeFilePath );
-		DEBUG_LOG( LOG::ERRORLOG, warn + err );
-		CONSOLE_LOG( LOG::ERRORLOG, warn + err );
+		DEBUG_LOG( LOG::ERRORLOG, "Failed to load submesh: Cannot open mesh file from: {}", relativeFilePath );
+		DEBUG_LOG( LOG::ERRORLOG, "Warning: {} Error: {}", warn, err);
 		throw std::runtime_error( warn + err );
 	}
 

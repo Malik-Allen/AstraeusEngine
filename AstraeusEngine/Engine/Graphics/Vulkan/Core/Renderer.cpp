@@ -22,11 +22,7 @@ namespace Hephaestus
 	{
 		if( rendererInfo.window == nullptr )
 		{
-			// TODO: Update Log macro to take multiple arguments like printf("", ... args)
-				// Change DEBUG_LOG to OUTPUT_LOG
-				// Create macro that prints log to both output and console
 			DEBUG_LOG( LOG::INFO, "Failed to create vulkan renderer: window is nullptr" );
-			CONSOLE_LOG( LOG::INFO, "Failed to create vulkan renderer: window is nullptr" );
 			return false;
 		}
 
@@ -55,7 +51,6 @@ namespace Hephaestus
 		m_device = std::make_unique<Device>( deviceConstructor );
 
 		DEBUG_LOG( LOG::INFO, "Vulkan Renderer has been created!" );
-		CONSOLE_LOG( LOG::INFO, "Vulkan Renderer has been created!" );
 
 		return true;
 	}

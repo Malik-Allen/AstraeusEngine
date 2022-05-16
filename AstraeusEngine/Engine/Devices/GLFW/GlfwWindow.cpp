@@ -26,7 +26,6 @@ bool GlfwWindow::OnCreate()
 	if( !glfwInit() )
 	{
 		DEBUG_LOG( LOG::FATAL, "Failed to init GLFW!" );
-		CONSOLE_LOG( LOG::FATAL, "Failed to init GLFW!" );
 		return false;
 	}
 
@@ -37,7 +36,6 @@ bool GlfwWindow::OnCreate()
 	if( !m_glfwWindow )
 	{
 		DEBUG_LOG( LOG::FATAL, "Failed to create GLFW window!" );
-		CONSOLE_LOG( LOG::FATAL, "Failed to create GLFW window!" );
 		return false;
 	}
 
@@ -70,7 +68,6 @@ bool GlfwWindow::InitGlad()
 	if( !gladLoadGLLoader( ( GLADloadproc )glfwGetProcAddress ) )
 	{
 		DEBUG_LOG( LOG::FATAL, "Failed to init GLAD!" );
-		CONSOLE_LOG( LOG::FATAL, "Failed to init GLAD!" );
 		return false;
 	}
 	return true;

@@ -43,7 +43,6 @@ bool SceneManager::LoadScene( IScene* scene )
 	if( scene == nullptr )
 	{
 		DEBUG_LOG( LOG::INFO, "Failed to load scene: scene is nullptr" );
-		CONSOLE_LOG( LOG::INFO, "Failed to load scene: scene is nullptr" );
 		return false;
 	}
 
