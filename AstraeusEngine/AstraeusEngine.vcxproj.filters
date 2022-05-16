@@ -30,9 +30,6 @@
     <ClCompile Include="Engine\Apps\App.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Devices\Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -79,6 +76,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Devices\PhysicalDevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Devices\GLFW\GlfwWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -153,6 +153,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Devices\PhysicalDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Devices\GLFW\GlfwWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Devices\WindowAPI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

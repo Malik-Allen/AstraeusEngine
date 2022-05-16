@@ -3,25 +3,27 @@
 #include "../Instance.h"
 #include "PhysicalDevice.h"
 
-#include <vulkan/vulkan.h>
+#include <vulkan/vulkan_core.h>
 #include <memory>
 
 namespace Hephaestus
 {
 	/*
-	* 
+	*
 	*/
-	struct DeviceConstructor
+	struct Device_Constructor
 	{
-		explicit DeviceConstructor( PhysicalDevice& _physicalDevice ) :
-			physicalDevice( _physicalDevice )
+		explicit Device_Constructor( PhysicalDevice& _physicalDevice, VkSurfaceKHR _surface ) :
+			physicalDevice( _physicalDevice ),
+			surface( _surface )
 		{};
 
 		const PhysicalDevice& physicalDevice;
+		VkSurfaceKHR surface;
 	};
 
 	/*
-	* 
+	*
 	*/
 	class Device
 	{
@@ -30,14 +32,21 @@ namespace Hephaestus
 		Device( Device&& ) = delete;
 		Device& operator=( Device&& ) = delete;
 	public:
-		Device();
+		Device( const Device_Constructor& deviceConstructor );
 		~Device();
 
-		bool OnCreate( const DeviceConstructor& deviceConstructor );
+		bool OnCreate();
 		void OnDestroy();
+
+		inline const VkDevice& GetVkDevice() const
+		{
+			return m_logicaldevice;
+		}
 
 	private:
 		VkDevice m_logicaldevice;
-		PhysicalDevice* m_physicalDevice;
+		const PhysicalDevice& m_physicalDevice;
+		VkSurfaceKHR m_surface;
+
 	};
 }

@@ -1,22 +1,27 @@
 #pragma once
 
-#include <vulkan/vulkan.h>
+#include <vulkan/vulkan_core.h>
 #include <string>
 #include <vector>
+#include <memory>
 
 namespace Hephaestus
 {
+	class PhysicalDevice;
 
-	struct InstanceConstructor
+	/*
+	*
+	*/
+	struct Instance_Constructor
 	{
-		InstanceConstructor() :
+		Instance_Constructor() :
 			applicationName( "" ),
 			engineName( "" ),
 			version( 0 ),
 			enableValidationLayers( false )
 		{};
 
-		InstanceConstructor(const std::string& _applicationName, const std::string& _engineName,
+		Instance_Constructor( const std::string& _applicationName, const std::string& _engineName,
 			const int _version, const bool _enableValidationLayers ) :
 			applicationName( _applicationName ),
 			engineName( _engineName ),
@@ -32,7 +37,8 @@ namespace Hephaestus
 
 
 	/*
-	*	
+	*	Wrapper class for VkInstance:
+	*	Represents the connection from your application to the Vulkan runtime and therefore only should exist once in your application
 	*/
 	class Instance
 	{
@@ -41,10 +47,10 @@ namespace Hephaestus
 		Instance( Instance&& ) = delete;
 		Instance& operator=( Instance&& ) = delete;
 	public:
-		Instance();
+		Instance( const Instance_Constructor& instanceConstructor );
 		~Instance();
 
-		VkResult OnCreate( const InstanceConstructor& instanceConstructor );
+		bool OnCreate();
 		void OnDestroy();
 
 		inline const VkInstance& GetVkInstance() const
@@ -52,8 +58,30 @@ namespace Hephaestus
 			return m_vkInstance;
 		}
 
+		/*
+		* @brief Tries to find the first available discrete GPU that can render to the given surface
+		* @param surface to test against
+		* @returns A valid physical device
+		*/
+		PhysicalDevice& GetSuitableGPU( VkSurfaceKHR surface );
+
+		/**
+		* @brief Tries to find the first available discrete GPU
+		* @returns A valid physical device
+		*/
+		PhysicalDevice& GetFirstGPU();
+
 	private:
 		VkInstance m_vkInstance;
+		/* @brief The physical devices found on the machine*/
+		std::vector<std::unique_ptr<PhysicalDevice>> m_gpus;
+
+		/*
+		*	@brief Searches the instance for GPUs on the machine, stores them as physical devices
+		*/
+		void FindGPUs();
+
+		
 	};
 
 };

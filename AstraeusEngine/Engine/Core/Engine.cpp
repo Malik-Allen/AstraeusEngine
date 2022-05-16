@@ -1,7 +1,12 @@
 #include "Engine.h"
 #include "Timer/EngineClock.h"
 #include "../Apps/App.h"
-#include "../Devices/Window.h"
+
+// TODO: Have a window manager handle the platform specific things instead of this happening in engine.cpp
+#include "../Devices/WindowAPI.h"	// Temp: For the below Window Macros
+#if WINDOW_API == WINDOW_GLFW
+#include "../Devices/GLFW/GlfwWindow.h"
+#endif
 
 #include <DebugLog.h>
 
@@ -23,7 +28,7 @@ Engine::Engine() :
 Engine::~Engine()
 {}
 
-// Initializes Engine Components
+// TODO: Create an Engine Properties struct to container Engine property related data
 bool Engine::Init(
 	const std::string& engineName,
 	const unsigned int fps,
@@ -47,14 +52,23 @@ bool Engine::Init(
 	m_fps = fps;
 	m_engineClock->SetFPS( m_fps );
 
-	m_window = new Window();
-	if( m_window->OnCreate( m_engineName, windowWidth, windowHeight ) == false )
+	// TODO: Move this logic to a window manager
+#if WINDOW_API == WINDOW_GLFW
+	Window_Properties windowProperties;
+	windowProperties.name = engineName;
+	windowProperties.extent.width = windowWidth;
+	windowProperties.extent.height = windowHeight;
+
+	m_window = std::make_unique<GlfwWindow>( windowProperties );
+	if( m_window->OnCreate() == false )
 	{
 		DEBUG_LOG( LOG::FATAL, "Failed to create window!" );
 		CONSOLE_LOG( LOG::FATAL, "Failed to create window!" );
 		return false;
 	}
 
+#endif
+	
 	DEBUG_LOG( LOG::INFO, "Boot sequence complete!" );
 	CONSOLE_LOG( LOG::INFO, "Boot sequence complete!" );
 
@@ -93,7 +107,7 @@ bool Engine::LoadApplication( IApp* app )
 	m_app = app;
 
 	AppInfo appInfo;
-	appInfo.rendererInfo = RendererInfo( m_app->GetAppName(), m_engineName, 1, true, m_window );
+	appInfo.rendererInfo = RendererInfo( m_app->GetAppName(), m_engineName, 1, false, m_window.get() );
 	if( m_app->OnCreate( appInfo ) == false )
 	{
 		DEBUG_LOG( LOG::ERRORLOG, "Failed to create application!" );
@@ -179,10 +193,7 @@ void Engine::OnDestroy()
 	if( m_window )
 	{
 		m_window->OnDestroy();
-		delete m_window;
-		m_window = nullptr;
 	}
-
 
 	if( m_engineClock )
 	{
@@ -216,8 +227,8 @@ void Engine::PrintRuntimeInfo()
 
 	if( m_window != nullptr )
 	{
-		DEBUG_LOG( LOG::INFO, m_engineName + "'s Window is running @ " + std::to_string( m_window->GetWidth() ) + " x " + std::to_string( m_window->GetHeight() ) );
-		CONSOLE_LOG( LOG::INFO, m_engineName + "'s Window is running @ " + std::to_string( m_window->GetWidth() ) + " x " + std::to_string( m_window->GetHeight() ) );
+		DEBUG_LOG( LOG::INFO, m_engineName + "'s Window is running @ " + std::to_string( m_window->GetExtent().width ) + " x " + std::to_string( m_window->GetExtent().height ) );
+		CONSOLE_LOG( LOG::INFO, m_engineName + "'s Window is running @ " + std::to_string( m_window->GetExtent().width ) + " x " + std::to_string( m_window->GetExtent().height ) );
 	}
 
 	if( m_isAppRunning && m_app != nullptr )

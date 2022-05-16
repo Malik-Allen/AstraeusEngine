@@ -162,6 +162,7 @@
     <ClCompile Include="..\..\glad\src\glad.c" />
     <ClCompile Include="Engine\Apps\App.cpp" />
     <ClCompile Include="Engine\Apps\SceneManager.cpp" />
+    <ClCompile Include="Engine\Devices\GLFW\GlfwWindow.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\3D\Mesh.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Devices\Device.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Devices\PhysicalDevice.cpp" />
@@ -172,7 +173,6 @@
     <ClCompile Include="Engine\Core\Engine.cpp" />
     <ClCompile Include="Engine\Core\Timer\EngineClock.cpp" />
     <ClCompile Include="Engine\Core\Timer\High-ResTimer.cpp" />
-    <ClCompile Include="Engine\Devices\Window.cpp" />
     <ClCompile Include="Engine\Graphics\Core\3D\MeshLoader.cpp" />
     <ClCompile Include="Engine\Graphics\Core\3D\MeshComponent.cpp" />
     <ClCompile Include="Engine\Graphics\Core\3D\TransformComponent.cpp" />
@@ -186,6 +186,8 @@
     <ClInclude Include="Engine\Apps\App.h" />
     <ClInclude Include="Engine\Apps\Scene.h" />
     <ClInclude Include="Engine\Apps\SceneManager.h" />
+    <ClInclude Include="Engine\Devices\GLFW\GlfwWindow.h" />
+    <ClInclude Include="Engine\Devices\WindowAPI.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\3D\Mesh.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Devices\Device.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Devices\PhysicalDevice.h" />

@@ -6,7 +6,7 @@
 
 #include <string>
 
-class Window;
+class IWindow;
 class Camera;
 class IScene;
 class RendererManager;
@@ -17,7 +17,7 @@ class RendererManager;
 struct RendererInfo
 {
 	RendererInfo( const std::string& _appName, const std::string& _engineName,
-		const int _version, const bool _enableValidationLayers, Window* _window ) :
+		const int _version, const bool _enableValidationLayers, IWindow* _window ) :
 		appName( _appName ),
 		engineName( _engineName ),
 		version( _version ),
@@ -38,7 +38,7 @@ struct RendererInfo
 	std::string	engineName;
 	int	version;
 	bool enableValidationLayers;
-	Window* window;
+	IWindow* window;
 };
 
 /*
@@ -78,7 +78,7 @@ public:
 	};
 
 protected:
-	Window* m_window;
+	IWindow* m_window;
 	Camera* m_camera;
 
 private:

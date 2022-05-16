@@ -5,7 +5,7 @@
 #include <string>
 
 class EngineClock;
-class Window;
+class IWindow;
 class IApp;
 
 // Singleton Engine Class
@@ -43,8 +43,6 @@ public:
 	// Get Instance of Engine
 	static Engine* Get();
 
-	Window* GetWindow() const { return m_window; }
-
 private:
 
 	// The Engine class should not be copied or moved hence removing the functionality
@@ -73,7 +71,7 @@ private:
 
 	IApp*				m_app;
 
-	Window*				m_window;
+	std::unique_ptr<IWindow> m_window;
 
 	// Prints the engine's current running stats (fps, app, etc.) to the console log
 	void PrintRuntimeInfo();

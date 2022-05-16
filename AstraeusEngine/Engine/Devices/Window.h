@@ -3,34 +3,74 @@
 
 #include <string>
 
-struct GLFWwindow;
+// GraphicsAPI specific fucntionality
+#include "../Graphics/Core/GraphicsAPI.h"
+#if GRAPHICS_API == GRAPHICS_OPENGL
+// some opengl headers
 
-class Window {
+#elif GRAPHICS_API == GRAPHICS_VULKAN
+#include <vulkan/vulkan_core.h>
 
+namespace Hephaestus
+{
+	class Instance;
+};
+
+#endif
+
+
+
+struct Extent
+{
+	uint32_t width;
+	uint32_t height;
+};
+
+struct Window_Properties
+{
+	std::string name;
+	Extent extent;
+};
+
+class IWindow
+{
+	IWindow( const IWindow& ) = delete;
+	IWindow& operator=( const IWindow& ) = delete;
+	IWindow( IWindow&& ) = delete;
+	IWindow& operator=( IWindow&& ) = delete;
 public:
+	explicit IWindow( const Window_Properties& properties ) :
+		m_properties( properties )
+	{};
 
-	Window();
-	~Window();
+	virtual ~IWindow()
+	{};
 
-	// Creates Window with the passed name and dimensions
-	bool OnCreate(const std::string& name, const int width_, const int height_);
-	void OnDestroy();
+	virtual bool OnCreate() = 0;
+	virtual void OnDestroy() = 0;
+	virtual void ProcessEvents() = 0;
+	virtual void Close() = 0;
 
-	GLFWwindow* GetGLFW_Window() const { return m_glfwWindow; }
-	int GetWidth() const { return m_width; }
-	int GetHeight() const { return m_height; }
+	inline const Window_Properties& GetProperties() const
+	{
+		return m_properties;
+	}
 
-	void ProcessEvents();
+	inline const Extent& GetExtent() const
+	{
+		return m_properties.extent;
+	}
 
-private:
+#if GRAPHICS_API == GRAPHICS_OPENGL
+	// some opengl functions
 
-	GLFWwindow*		m_glfwWindow;
+#elif GRAPHICS_API == GRAPHICS_VULKAN
+	virtual VkSurfaceKHR CreateSurface( Hephaestus::Instance& instance ) = 0;
 
-	int				m_width;
-	int				m_height;
+#endif
 
-	void SetPre_Attributes();
-	void SetPost_Attributes();
+protected:
+	Window_Properties m_properties;
 
 };
 
