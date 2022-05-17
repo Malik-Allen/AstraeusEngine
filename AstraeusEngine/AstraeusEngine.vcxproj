@@ -163,6 +163,7 @@
     <ClCompile Include="Engine\Apps\App.cpp" />
     <ClCompile Include="Engine\Apps\SceneManager.cpp" />
     <ClCompile Include="Engine\Devices\GLFW\GlfwWindow.cpp" />
+    <ClCompile Include="Engine\Devices\WindowManager.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\3D\Mesh.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Devices\Device.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Devices\PhysicalDevice.cpp" />
@@ -188,6 +189,8 @@
     <ClInclude Include="Engine\Apps\SceneManager.h" />
     <ClInclude Include="Engine\Devices\GLFW\GlfwWindow.h" />
     <ClInclude Include="Engine\Devices\WindowAPI.h" />
+    <ClInclude Include="Engine\Devices\WindowManager.h" />
+    <ClInclude Include="Engine\Devices\WindowTypes.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\3D\Mesh.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Devices\Device.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Devices\PhysicalDevice.h" />

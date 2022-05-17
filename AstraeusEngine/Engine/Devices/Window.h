@@ -1,7 +1,7 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#include <string>
+#include "WindowTypes.h"
 
 // GraphicsAPI specific fucntionality
 #include "../Graphics/Core/GraphicsAPI.h"
@@ -18,19 +18,6 @@ namespace Hephaestus
 
 #endif
 
-
-
-struct Extent
-{
-	uint32_t width;
-	uint32_t height;
-};
-
-struct Window_Properties
-{
-	std::string name;
-	Extent extent;
-};
 
 class IWindow
 {

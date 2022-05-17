@@ -5,7 +5,7 @@
 #include <string>
 
 class EngineClock;
-class IWindow;
+class WindowManager;
 class IApp;
 
 // Singleton Engine Class
@@ -71,7 +71,7 @@ private:
 
 	IApp*				m_app;
 
-	std::unique_ptr<IWindow> m_window;
+	std::unique_ptr<WindowManager> m_windowManager;
 
 	// Prints the engine's current running stats (fps, app, etc.) to the console log
 	void PrintRuntimeInfo();

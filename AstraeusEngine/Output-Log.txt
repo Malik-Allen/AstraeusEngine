@@ -1,17 +1,19 @@
-[05/15/22|23:56:23][INFO]	Engine::Init(41):	Initializing boot sequence... Please wait...
-[05/15/22|23:56:23][INFO]	Engine::Init(69):	Boot sequence complete!
-[05/15/22|23:56:23][INFO]	Engine::PrintRuntimeInfo(216):	Astraeus Engine is running @ 120fps
-[05/15/22|23:56:23][INFO]	Engine::PrintRuntimeInfo(220):	Window is running @ 1280 x 720
-[05/15/22|23:56:23][INFO]	Engine::LoadApplication(80):	Loading application... Please wait...
-[05/15/22|23:56:23][INFO]	World::SpawnActor(27):	Spawning actor in world...
-[05/15/22|23:56:23][INFO]	World::SpawnActor(42):	Spawned actor!
-[05/15/22|23:56:23][INFO]	RendererManager::OnCreate(43):	Creating Vulkan Renderer...
-[05/15/22|23:56:23][INFO]	Hephaestus::PhysicalDevice::PhysicalDevice(16):	Found GPU: NVIDIA GeForce GTX 1660 Ti
-[05/15/22|23:56:23][INFO]	Hephaestus::Device::Device(12):	Selected GPU: NVIDIA GeForce GTX 1660 Ti
-[05/15/22|23:56:23][INFO]	Hephaestus::Renderer::OnCreate(53):	Vulkan Renderer has been created!
-[05/15/22|23:56:23][INFO]	World::SpawnActor(27):	Spawning actor in world...
-[05/15/22|23:56:23][INFO]	World::SpawnActor(42):	Spawned actor!
-[05/15/22|23:56:23][INFO]	Engine::LoadApplication(112):	Load complete!
-[05/15/22|23:56:23][INFO]	Engine::PrintRuntimeInfo(216):	Astraeus Engine is running @ 120fps
-[05/15/22|23:56:23][INFO]	Engine::PrintRuntimeInfo(220):	Window is running @ 1280 x 720
-[05/15/22|23:56:23][INFO]	Engine::PrintRuntimeInfo(225):	Test Run is running
+[05/17/22|09:18:46][INFO]	Engine::Init(36):	Initializing boot sequence... Please wait...
+[05/17/22|09:18:46][INFO]	WindowManager::Create_Window(22):	Creating GLFW Window...
+[05/17/22|09:18:46][INFO]	WindowManager::Create_Window(33):	Created window!
+[05/17/22|09:18:46][INFO]	Engine::Init(60):	Boot sequence complete!
+[05/17/22|09:18:46][INFO]	Engine::PrintRuntimeInfo(207):	Astraeus Engine is running @ 120fps
+[05/17/22|09:18:46][INFO]	WindowManager::PrintWindowDetails(62):	Window is running @ 1280 x 720
+[05/17/22|09:18:46][INFO]	Engine::LoadApplication(71):	Loading application... Please wait...
+[05/17/22|09:18:46][INFO]	World::SpawnActor(27):	Spawning actor in world...
+[05/17/22|09:18:46][INFO]	World::SpawnActor(42):	Spawned actor!
+[05/17/22|09:18:46][INFO]	RendererManager::OnCreate(43):	Creating Vulkan Renderer...
+[05/17/22|09:18:46][INFO]	Hephaestus::PhysicalDevice::PhysicalDevice(16):	Found GPU: NVIDIA GeForce GTX 1660 Ti
+[05/17/22|09:18:46][INFO]	Hephaestus::Device::Device(12):	Selected GPU: NVIDIA GeForce GTX 1660 Ti
+[05/17/22|09:18:46][INFO]	Hephaestus::Renderer::OnCreate(53):	Vulkan Renderer has been created!
+[05/17/22|09:18:46][INFO]	World::SpawnActor(27):	Spawning actor in world...
+[05/17/22|09:18:46][INFO]	World::SpawnActor(42):	Spawned actor!
+[05/17/22|09:18:46][INFO]	Engine::LoadApplication(103):	Load complete!
+[05/17/22|09:18:46][INFO]	Engine::PrintRuntimeInfo(207):	Astraeus Engine is running @ 120fps
+[05/17/22|09:18:46][INFO]	WindowManager::PrintWindowDetails(62):	Window is running @ 1280 x 720
+[05/17/22|09:18:46][INFO]	Engine::PrintRuntimeInfo(216):	Test Run is running

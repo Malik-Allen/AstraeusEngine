@@ -9,7 +9,7 @@
 namespace Hephaestus
 {
 	/*
-	*
+	*	
 	*/
 	struct Device_Constructor
 	{
@@ -23,7 +23,7 @@ namespace Hephaestus
 	};
 
 	/*
-	*
+	*	
 	*/
 	class Device
 	{
