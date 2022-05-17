@@ -29,8 +29,13 @@ namespace Hephaestus
 		// TODO: Have this take place in IRenderer, so we don't have to assign this or worry about it whenever we create a new renderer class
 		m_window = rendererInfo.window;
 
+		for( auto extension : m_window->GetSurfaceExtensions() )
+		{
+			AddInstanceExtension( extension );
+		}
+
 		Instance_Constructor instanceConstructor( rendererInfo.appName, rendererInfo.engineName,
-			rendererInfo.version, rendererInfo.enableValidationLayers );
+			rendererInfo.version, rendererInfo.enableValidationLayers, GetInstanceExtensions() );
 		m_instance = std::make_unique<Instance>( instanceConstructor );
 
 		// If requested, we enable the default validation layers for debugging
@@ -46,8 +51,10 @@ namespace Hephaestus
 		m_surface = m_window->CreateSurface( *m_instance.get() );
 
 		auto& gpu = m_instance->GetSuitableGPU( m_surface );
+
+		AddDeviceExtension( VK_KHR_SWAPCHAIN_EXTENSION_NAME );
 		
-		Device_Constructor deviceConstructor( gpu, m_surface );
+		Device_Constructor deviceConstructor( gpu, m_surface, GetDeviceExtensions() );
 		m_device = std::make_unique<Device>( deviceConstructor );
 
 		DEBUG_LOG( LOG::INFO, "Vulkan Renderer has been created!" );
@@ -72,6 +79,26 @@ namespace Hephaestus
 
 	void Renderer::RenderScene( IScene* scene )
 	{}
+
+	void Renderer::AddDeviceExtension( const char* extension, bool optional )
+	{
+		m_deviceExtensions[extension] = optional;
+	}
+
+	void Renderer::AddInstanceExtension( const char* extension, bool optional )
+	{
+		m_instanceExtensions[extension] = optional;
+	}
+
+	const std::unordered_map<const char*, bool> Renderer::GetDeviceExtensions()
+	{
+		return m_deviceExtensions;
+	}
+
+	const std::unordered_map<const char*, bool> Renderer::GetInstanceExtensions()
+	{
+		return m_instanceExtensions;
+	}
 
 	void Renderer::Update( const float deltaTime )
 	{}

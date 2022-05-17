@@ -7,6 +7,9 @@
 
 class IWindow;
 
+/*
+*	Manages the creation and lifetime of a IWindow* for apps, engine, etc
+*/
 class WindowManager
 {
 public:

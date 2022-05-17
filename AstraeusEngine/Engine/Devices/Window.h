@@ -2,7 +2,6 @@
 #define WINDOW_H
 
 #include "WindowTypes.h"
-
 // GraphicsAPI specific fucntionality
 #include "../Graphics/Core/GraphicsAPI.h"
 #if GRAPHICS_API == GRAPHICS_OPENGL
@@ -10,13 +9,13 @@
 
 #elif GRAPHICS_API == GRAPHICS_VULKAN
 #include <vulkan/vulkan_core.h>
-
 namespace Hephaestus
 {
 	class Instance;
 };
-
 #endif
+
+#include <vector>
 
 
 class IWindow
@@ -53,7 +52,7 @@ public:
 
 #elif GRAPHICS_API == GRAPHICS_VULKAN
 	virtual VkSurfaceKHR CreateSurface( Hephaestus::Instance& instance ) = 0;
-
+	virtual std::vector<const char*> GetSurfaceExtensions() = 0;
 #endif
 
 protected:

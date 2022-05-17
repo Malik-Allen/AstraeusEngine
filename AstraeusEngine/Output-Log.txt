@@ -1,19 +1,171 @@
-[05/17/22|09:18:46][INFO]	Engine::Init(36):	Initializing boot sequence... Please wait...
-[05/17/22|09:18:46][INFO]	WindowManager::Create_Window(22):	Creating GLFW Window...
-[05/17/22|09:18:46][INFO]	WindowManager::Create_Window(33):	Created window!
-[05/17/22|09:18:46][INFO]	Engine::Init(60):	Boot sequence complete!
-[05/17/22|09:18:46][INFO]	Engine::PrintRuntimeInfo(207):	Astraeus Engine is running @ 120fps
-[05/17/22|09:18:46][INFO]	WindowManager::PrintWindowDetails(62):	Window is running @ 1280 x 720
-[05/17/22|09:18:46][INFO]	Engine::LoadApplication(71):	Loading application... Please wait...
-[05/17/22|09:18:46][INFO]	World::SpawnActor(27):	Spawning actor in world...
-[05/17/22|09:18:46][INFO]	World::SpawnActor(42):	Spawned actor!
-[05/17/22|09:18:46][INFO]	RendererManager::OnCreate(43):	Creating Vulkan Renderer...
-[05/17/22|09:18:46][INFO]	Hephaestus::PhysicalDevice::PhysicalDevice(16):	Found GPU: NVIDIA GeForce GTX 1660 Ti
-[05/17/22|09:18:46][INFO]	Hephaestus::Device::Device(12):	Selected GPU: NVIDIA GeForce GTX 1660 Ti
-[05/17/22|09:18:46][INFO]	Hephaestus::Renderer::OnCreate(53):	Vulkan Renderer has been created!
-[05/17/22|09:18:46][INFO]	World::SpawnActor(27):	Spawning actor in world...
-[05/17/22|09:18:46][INFO]	World::SpawnActor(42):	Spawned actor!
-[05/17/22|09:18:46][INFO]	Engine::LoadApplication(103):	Load complete!
-[05/17/22|09:18:46][INFO]	Engine::PrintRuntimeInfo(207):	Astraeus Engine is running @ 120fps
-[05/17/22|09:18:46][INFO]	WindowManager::PrintWindowDetails(62):	Window is running @ 1280 x 720
-[05/17/22|09:18:46][INFO]	Engine::PrintRuntimeInfo(216):	Test Run is running
+[05/17/22|19:52:51][INFO]	Engine::Init(36):	Initializing boot sequence... Please wait...
+[05/17/22|19:52:51][INFO]	WindowManager::Create_Window(22):	Creating GLFW Window...
+[05/17/22|19:52:51][INFO]	WindowManager::Create_Window(33):	Created window!
+[05/17/22|19:52:51][INFO]	Engine::Init(60):	Boot sequence complete!
+[05/17/22|19:52:51][INFO]	Engine::PrintRuntimeInfo(207):	Astraeus Engine is running @ 120fps
+[05/17/22|19:52:51][INFO]	WindowManager::PrintWindowDetails(62):	Window is running @ 1280 x 720
+[05/17/22|19:52:51][INFO]	Engine::LoadApplication(71):	Loading application... Please wait...
+[05/17/22|19:52:51][INFO]	World::SpawnActor(27):	Spawning actor in world...
+[05/17/22|19:52:51][INFO]	World::SpawnActor(42):	Spawned actor!
+[05/17/22|19:52:51][INFO]	RendererManager::OnCreate(43):	Creating Vulkan Renderer...
+[05/17/22|19:52:51][INFO]	Hephaestus::enable_extension(33):	Extension VK_KHR_win32_surface found, enabling it
+[05/17/22|19:52:51][INFO]	Hephaestus::PhysicalDevice::PhysicalDevice(16):	Found GPU: NVIDIA GeForce GTX 1660 Ti
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(16):	Selected GPU: NVIDIA GeForce GTX 1660 Ti
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(57):	Device supports the following extensions:
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_16bit_storage
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_8bit_storage
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_acceleration_structure
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_bind_memory2
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_buffer_device_address
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_copy_commands2
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_create_renderpass2
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_dedicated_allocation
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_deferred_host_operations
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_depth_stencil_resolve
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_descriptor_update_template
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_device_group
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_draw_indirect_count
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_driver_properties
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_external_fence
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_external_fence_win32
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_external_memory
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_external_memory_win32
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_external_semaphore
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_external_semaphore_win32
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_fragment_shading_rate
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_get_memory_requirements2
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_image_format_list
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_imageless_framebuffer
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_maintenance1
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_maintenance2
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_maintenance3
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_multiview
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_pipeline_executable_properties
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_pipeline_library
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_present_id
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_present_wait
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_push_descriptor
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_ray_tracing_pipeline
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_relaxed_block_layout
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_sampler_mirror_clamp_to_edge
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_sampler_ycbcr_conversion
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_separate_depth_stencil_layouts
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_shader_atomic_int64
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_shader_clock
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_shader_draw_parameters
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_shader_float16_int8
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_shader_float_controls
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_shader_non_semantic_info
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_shader_subgroup_extended_types
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_shader_subgroup_uniform_control_flow
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_shader_terminate_invocation
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_spirv_1_4
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_storage_buffer_storage_class
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_swapchain
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_swapchain_mutable_format
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_synchronization2
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_timeline_semaphore
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_uniform_buffer_standard_layout
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_variable_pointers
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_vulkan_memory_model
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_win32_keyed_mutex
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_workgroup_memory_explicit_layout
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_KHR_zero_initialize_workgroup_memory
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_4444_formats
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_blend_operation_advanced
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_buffer_device_address
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_calibrated_timestamps
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_color_write_enable
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_conditional_rendering
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_conservative_rasterization
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_custom_border_color
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_depth_clip_enable
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_depth_range_unrestricted
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_descriptor_indexing
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_discard_rectangles
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_extended_dynamic_state
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_extended_dynamic_state2
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_external_memory_host
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_fragment_shader_interlock
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_full_screen_exclusive
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_global_priority
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_global_priority_query
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_hdr_metadata
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_host_query_reset
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_image_robustness
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_index_type_uint8
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_inline_uniform_block
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_line_rasterization
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_memory_budget
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_memory_priority
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_multi_draw
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_pci_bus_info
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_pipeline_creation_cache_control
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_pipeline_creation_feedback
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_post_depth_coverage
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_private_data
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_provoking_vertex
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_queue_family_foreign
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_robustness2
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_sample_locations
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_sampler_filter_minmax
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_scalar_block_layout
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_separate_stencil_usage
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_shader_atomic_float
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_shader_demote_to_helper_invocation
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_shader_image_atomic_int64
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_shader_subgroup_ballot
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_shader_subgroup_vote
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_shader_viewport_index_layer
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_subgroup_size_control
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_texel_buffer_alignment
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_tooling_info
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_transform_feedback
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_vertex_attribute_divisor
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_vertex_input_dynamic_state
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_ycbcr_2plane_444_formats
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_EXT_ycbcr_image_arrays
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_acquire_winrt_display
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_clip_space_w_scaling
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_compute_shader_derivatives
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_corner_sampled_image
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_coverage_reduction_mode
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_cuda_kernel_launch
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_dedicated_allocation
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_dedicated_allocation_image_aliasing
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_device_diagnostic_checkpoints
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_device_diagnostics_config
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_device_generated_commands
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_external_memory
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_external_memory_win32
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_fill_rectangle
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_fragment_coverage_to_color
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_fragment_shader_barycentric
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_fragment_shading_rate_enums
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_framebuffer_mixed_samples
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_geometry_shader_passthrough
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_inherited_viewport_scissor
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_mesh_shader
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_ray_tracing
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_representative_fragment_test
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_sample_mask_override_coverage
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_scissor_exclusive
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_shader_image_footprint
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_shader_sm_builtins
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_shader_subgroup_partitioned
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_shading_rate_image
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_viewport_array2
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_viewport_swizzle
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NV_win32_keyed_mutex
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NVX_binary_import
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NVX_image_view_handle
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(60):		VK_NVX_multiview_per_view_attributes
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(80):	Device supports the following requested extensions:
+[05/17/22|19:52:51][INFO]	Hephaestus::Device::Device(83):		VK_KHR_swapchain
+[05/17/22|19:52:51][INFO]	Hephaestus::Renderer::OnCreate(60):	Vulkan Renderer has been created!
+[05/17/22|19:52:51][INFO]	World::SpawnActor(27):	Spawning actor in world...
+[05/17/22|19:52:51][INFO]	World::SpawnActor(42):	Spawned actor!
+[05/17/22|19:52:51][INFO]	Engine::LoadApplication(103):	Load complete!
+[05/17/22|19:52:51][INFO]	Engine::PrintRuntimeInfo(207):	Astraeus Engine is running @ 120fps
+[05/17/22|19:52:51][INFO]	WindowManager::PrintWindowDetails(62):	Window is running @ 1280 x 720
+[05/17/22|19:52:51][INFO]	Engine::PrintRuntimeInfo(216):	Test Run is running

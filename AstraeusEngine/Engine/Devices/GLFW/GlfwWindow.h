@@ -25,7 +25,7 @@ public:
 
 #elif GRAPHICS_API == GRAPHICS_VULKAN
 	virtual VkSurfaceKHR CreateSurface( Hephaestus::Instance& instance ) override final;
-
+	virtual std::vector<const char*> GetSurfaceExtensions() override final;
 #endif
 
 private:

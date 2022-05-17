@@ -94,6 +94,15 @@ VkSurfaceKHR GlfwWindow::CreateSurface( Hephaestus::Instance& instance )
 	return surface;
 }
 
+std::vector<const char*> GlfwWindow::GetSurfaceExtensions()
+{
+	uint32_t extensionCount = 0;
+	const char** glfwExtensions = glfwGetRequiredInstanceExtensions( &extensionCount );
+
+	std::vector<const char*> surfaceExtensions( glfwExtensions, glfwExtensions + extensionCount );
+	return surfaceExtensions;
+}
+
 #endif
 
 

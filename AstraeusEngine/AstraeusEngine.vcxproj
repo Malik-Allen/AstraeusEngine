@@ -168,6 +168,9 @@
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Devices\Device.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Devices\PhysicalDevice.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Instance.cpp" />
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Queues\CommandBuffer.cpp" />
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Queues\CommandPool.cpp" />
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Queues\Queue.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Debug\Debug.cpp" />
     <ClCompile Include="Engine\World\Objects\Actor.cpp" />
     <ClCompile Include="Engine\World\World.cpp" />
@@ -195,6 +198,9 @@
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Devices\Device.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Devices\PhysicalDevice.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Instance.h" />
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Queues\CommandBuffer.h" />
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Queues\CommandPool.h" />
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Queues\Queue.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Debug\Debug.h" />
     <ClInclude Include="Engine\World\Objects\Actor.h" />
     <ClInclude Include="Engine\Core\Engine.h" />

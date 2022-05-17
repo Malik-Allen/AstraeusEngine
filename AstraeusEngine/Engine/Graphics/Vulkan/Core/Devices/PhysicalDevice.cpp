@@ -60,11 +60,16 @@ namespace Hephaestus
 		{
 			if( vkGetPhysicalDeviceSurfaceSupportKHR( m_physicalDevice, queue_family_index, surface, &present_supported ) != VK_SUCCESS )
 			{
-
+				DEBUG_LOG( LOG::WARNING, "Surface does not support physical device!" );
 			}
 		}
 
 		return present_supported;
+	}
+
+	const VkPhysicalDeviceFeatures PhysicalDevice::GetRequestedFeatures() const
+	{
+		return requestedFeatures;
 	}
 
 }

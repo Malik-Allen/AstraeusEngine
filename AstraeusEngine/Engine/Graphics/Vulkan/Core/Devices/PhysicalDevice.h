@@ -59,6 +59,8 @@ namespace Hephaestus
 
 		VkBool32 IsPresentSupported( VkSurfaceKHR surface, uint32_t queue_family_index ) const;
 
+		const VkPhysicalDeviceFeatures GetRequestedFeatures() const;
+
 	private:
 		VkPhysicalDevice m_physicalDevice;
 		const Instance& m_instance;
@@ -73,6 +75,7 @@ namespace Hephaestus
 		VkPhysicalDeviceMemoryProperties memoryProperties;
 		/** @brief Queue family properties of the physical device */
 		std::vector<VkQueueFamilyProperties> queueFamilyProperties;
+		VkPhysicalDeviceFeatures requestedFeatures;
 		/** @brief List of extensions supported by the device */
 		std::vector<std::string> supportedExtensions;
 	};
