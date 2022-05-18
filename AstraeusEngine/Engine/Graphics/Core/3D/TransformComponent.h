@@ -5,6 +5,7 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/string_cast.hpp>
 
 class TransformComponent : public ECS::Component
 {
@@ -17,7 +18,9 @@ public:
 
 	glm::vec3 GetPosition() const;
 	glm::vec3 GetRotation() const;
+	glm::vec3 GetScale() const;
 	glm::mat4 GetTransform() const;
+	
 
 private:
 	glm::vec3	m_position;

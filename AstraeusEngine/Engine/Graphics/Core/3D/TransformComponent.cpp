@@ -41,6 +41,11 @@ glm::vec3 TransformComponent::GetRotation() const
 	return TransformComponent::m_rotation;
 }
 
+glm::vec3 TransformComponent::GetScale() const
+{
+	return m_scale;
+}
+
 glm::mat4 TransformComponent::GetTransform() const
 {
 	return m_transform;

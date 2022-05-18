@@ -1,7 +1,7 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-#include "Objects/Actor.h"
+#include "Objects/ActorCore.h"
 
 #include <vector>
 
@@ -9,6 +9,8 @@ namespace ECS
 {
 	class World;
 };
+
+class Actor;
 
 /*
 *	Wrapper Class for World Instance 
@@ -25,7 +27,7 @@ public:
 	*	@param	ActorSpawnInfo:		The information used to spawn actor
 	*	@return	Actor:		Returns a reference to the actor that is spawned in the world, returns nullptr if the actor could not be spawned
 	*/
-	Actor* SpawnActor( ActorSpawnInfo actorSpawnInfo );
+	Actor* SpawnActor( ActorSpawnInfo actorSpawnInfo = ActorSpawnInfo() );
 
 	inline ECS::World* GetECS() const
 	{

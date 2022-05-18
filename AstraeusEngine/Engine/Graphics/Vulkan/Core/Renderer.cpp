@@ -52,6 +52,7 @@ namespace Hephaestus
 
 		auto& gpu = m_instance->GetSuitableGPU( m_surface );
 
+		// Mandatory swapchain extension
 		AddDeviceExtension( VK_KHR_SWAPCHAIN_EXTENSION_NAME );
 		
 		Device_Constructor deviceConstructor( gpu, m_surface, GetDeviceExtensions() );

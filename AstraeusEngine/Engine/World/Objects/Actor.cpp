@@ -30,7 +30,6 @@ void Actor::AddChild( Actor* child )
 	if( child == nullptr )
 	{
 		DEBUG_LOG( LOG::INFO, "Failed to add child to actor: child is nullptr" );
-		CONSOLE_LOG( LOG::INFO, "Failed to add child to actor: child is nullptr" );
 		return;
 	}
 
@@ -44,16 +43,19 @@ void Actor::AddChild( Actor* child )
 	m_children.push_back( child );
 }
 
-bool Actor::OnCreate( ActorSpawnInfo actorSpawnInfo )
+const std::vector<Actor*>& Actor::GetChildActors() const
+{
+	return m_children;
+}
+
+bool Actor::OnCreate( ActorSpawnInfo actorSpawnInfo /*= ActorSpawnInfo()*/ )
 {
 	if( m_world != nullptr )
 	{
-		m_transformComponent = m_world->GetECS()->AddComponentToEntity<TransformComponent>( m_entity, 
-			actorSpawnInfo.position, 0.0f, actorSpawnInfo.rotation, actorSpawnInfo.scale );
+		m_transformComponent = AddComponent<TransformComponent>( actorSpawnInfo.position, 0.0f, actorSpawnInfo.rotation, actorSpawnInfo.scale );
 		if( m_transformComponent == nullptr )
 		{
 			DEBUG_LOG( LOG::INFO, "Failed to create actor: transform component is nullptr" );
-			CONSOLE_LOG( LOG::INFO, "Failed to create actor: transform component is nullptr" );
 			return false;
 		}
 	}

@@ -1,35 +1,16 @@
 #ifndef ACTOR_H
 #define ACTOR_H
 
-#include <ECS.h>
+#include "ActorCore.h"
+#include "../World.h"
 
+#include <ECS.h>
 #include <vector>
-#include <glm/glm.hpp>
 
 class World;
 class TransformComponent;
 
-/*
-*	Used to provide information about the spawn of an actor
-*/
-struct ActorSpawnInfo
-{
-	ActorSpawnInfo() :
-		position( glm::vec3( 0.0f ) ),
-		rotation( glm::vec3( 0.0f ) ),
-		scale( glm::vec3( 1.0f ) )
-	{};
 
-	ActorSpawnInfo( glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale ) :
-		position( _position ),
-		rotation( _rotation ),
-		scale( _scale )
-	{};
-
-	glm::vec3 position;
-	glm::vec3 rotation;
-	glm::vec3 scale;
-};
 
 /*
 *	The Actor class represents an object instantiated in the world, that has a transform component
@@ -49,6 +30,33 @@ public:
 	*/
 	void AddChild( Actor* child );
 
+	/*
+	*	Returns the array of children actors to this actor
+	*/
+	const std::vector<Actor*>& GetChildActors() const;
+
+
+	// Adds Component this actor
+	template<typename T, typename ... Args>
+	T* AddComponent( Args&& ... args )
+	{
+		return m_world->GetECS()->AddComponentToEntity<T, Args ...>( m_entity, std::forward<Args>( args ) ... );
+	}
+
+	// Finds component on this actor
+	template<typename T>
+	T* FindComponentByClass()
+	{
+		return m_world->GetECS()->FindComponentInEntity<T>( m_entity );
+	}
+
+	// Removes the first component found of the same type from this actor
+	template<typename T>
+	void RemoveComponent()
+	{
+		m_world->GetECS()->RemoveComponentFromEntity<T>( m_entity );
+	}
+
 private:
 	ECS::EntityId m_entity;
 	World* m_world;
@@ -60,7 +68,7 @@ private:
 	*/
 	void RemoveChild( Actor* child );
 
-	bool OnCreate( ActorSpawnInfo actorSpawnInfo );
+	bool OnCreate( ActorSpawnInfo actorSpawnInfo = ActorSpawnInfo() );
 	void OnDestroy();
 	void Update( const float deltaTime );
 
@@ -73,4 +81,3 @@ protected:
 };
 
 #endif // !ACTOR_H
-

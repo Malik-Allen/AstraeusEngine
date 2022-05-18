@@ -67,6 +67,15 @@ namespace Hephaestus
 			throw std::runtime_error( "Failed to create instance: could not obtain instance extension properties!" );
 		}
 
+		if( availableInstanceExtensions.size() > 0 )
+		{
+			DEBUG_LOG( LOG::INFO, "Instance supports the following extensions:" );
+			for( auto& extension : availableInstanceExtensions )
+			{
+				DEBUG_LOG( LOG::INFO, "\t{}", std::string( extension.extensionName ) );
+			}
+		}
+
 		// Mandatory surface extension
 		m_enabledExtensions.push_back( VK_KHR_SURFACE_EXTENSION_NAME );
 

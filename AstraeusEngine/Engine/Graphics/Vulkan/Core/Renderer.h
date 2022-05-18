@@ -12,6 +12,9 @@ namespace Hephaestus
 	class Device;
 	class PhysicalDevice;
 
+	/*
+	* 
+	*/
 	class Renderer : public IRenderer
 	{
 	public:
@@ -66,8 +69,9 @@ namespace Hephaestus
 		std::unordered_map<const char*, bool> m_instanceExtensions;
 
 
-
+		// ECS::ISystsem::Update()
 		virtual void Update( const float deltaTime ) override final;
+		// DEV-NOTE: Will be called inside of ECS::ISystsem::Update() and will work with the components inside of the signature to Render MeshComponents
 		virtual void Render( MeshComponent* mesh, TransformComponent* transform, Camera* camera ) override final;
 	};
 };

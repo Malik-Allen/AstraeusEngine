@@ -78,3 +78,7 @@ private:
 };
 
 #endif
+
+// TODO: Add a config file reader for Engine Config, Renderer, ECS 
+// - Renderer: If I can do a compile-time check for config file, then I can choose a graphics api in the renderer instead of changing a macro directly
+// - ECS :Right now it just spawns 10000 entities by default but it should be customizable at run-time, I'm thinking some static functionality so I can provide the values to intiate the ECS

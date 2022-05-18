@@ -1,5 +1,5 @@
 #include "World.h"
-
+#include "Objects/Actor.h"
 #include <ECS.h>
 #include <DebugLog.h>
 
@@ -22,10 +22,9 @@ World::~World()
 	}
 }
 
-Actor* World::SpawnActor( ActorSpawnInfo actorSpawnInfo )
+Actor* World::SpawnActor( ActorSpawnInfo actorSpawnInfo /*= ActorSpawnInfo()*/ )
 {
 	DEBUG_LOG( LOG::INFO, "Spawning actor in world..." );
-	CONSOLE_LOG( LOG::INFO, "Spawning actor in world..." );
 
 	Actor* actor = new Actor();
 	auto entities = m_world->CreateEntities( 1 );
@@ -40,7 +39,6 @@ Actor* World::SpawnActor( ActorSpawnInfo actorSpawnInfo )
 				m_worldParentActor->AddChild( actor );
 			}
 			DEBUG_LOG( LOG::INFO, "Spawned actor!" );
-			CONSOLE_LOG( LOG::INFO, "Spawned actor!" );
 			return actor;
 		}
 	}
@@ -54,7 +52,6 @@ Actor* World::SpawnActor( ActorSpawnInfo actorSpawnInfo )
 	}
 
 	DEBUG_LOG( LOG::WARNING, "Failed to spawn actor!" );
-	CONSOLE_LOG( LOG::WARNING, "Failed to spawn actor!" );
 
 	return nullptr;
 }
@@ -65,7 +62,6 @@ bool World::OnCreate()
 	if( worldParentActor == nullptr )
 	{
 		DEBUG_LOG( LOG::ERRORLOG, "Failed to create world: failed to create world parent actor" );
-		CONSOLE_LOG( LOG::ERRORLOG, "Failed to create world: failed to create world parent actor" );
 		return false;
 	}
 	

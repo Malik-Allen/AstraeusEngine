@@ -27,7 +27,8 @@ namespace Hephaestus
 	};
 
 	/*
-	*	
+	*	Wrapper class for the Vulkan Logical Device:
+	*	Represents an intialized Vulkan device that is ready to create all other objects
 	*/
 	class Device
 	{
