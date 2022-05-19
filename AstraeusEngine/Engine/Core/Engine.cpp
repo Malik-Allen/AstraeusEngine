@@ -11,11 +11,10 @@
 std::unique_ptr<Engine> Engine::g_engineInstance( nullptr );
 
 Engine::Engine() :
-	m_engineName( "" ),
+	m_properties( Engine_Properties() ),
 	m_engineClock( nullptr ),
 	m_isRunning( false ),
 	m_isAppRunning( false ),
-	m_fps( 120 ),
 	m_app( nullptr ),
 	m_windowManager( nullptr )
 {}
@@ -23,15 +22,10 @@ Engine::Engine() :
 Engine::~Engine()
 {}
 
-// TODO: Create an Engine Properties struct to container Engine property related data
-bool Engine::Init(
-	const std::string& engineName,
-	const unsigned int fps,
-	const int windowWidth,
-	const int windowHeight )
+bool Engine::Init( const Engine_Properties& properties )
 {
 	DEBUG_INIT();
-	m_engineName = engineName;
+	m_properties = properties;
 
 	DEBUG_LOG( LOG::INFO, "Initializing boot sequence... Please wait..." );
 
@@ -42,13 +36,11 @@ bool Engine::Init(
 		return false;
 	}
 
-	m_fps = fps;
-	m_engineClock->SetFPS( m_fps );
+	m_engineClock->SetFPS( m_properties.fps );
 
 	Window_Properties windowProperties;
-	windowProperties.name = engineName;
-	windowProperties.extent.width = windowWidth;
-	windowProperties.extent.height = windowHeight;
+	windowProperties.name = m_properties.name;
+	windowProperties.extent = m_properties.windowExtent;
 
 	m_windowManager = std::make_unique<WindowManager>();
 	if( m_windowManager->Create_Window( windowProperties ) == false )
@@ -91,7 +83,7 @@ bool Engine::LoadApplication( IApp* app )
 	m_app = app;
 
 	AppInfo appInfo;
-	appInfo.rendererInfo = RendererInfo( m_app->GetAppName(), m_engineName, 1, false, m_windowManager->GetCurrentWindow() );
+	appInfo.rendererInfo = RendererInfo( m_app->GetAppName(), m_properties.name, 1, false, m_windowManager->GetCurrentWindow() );
 	if( m_app->OnCreate( appInfo ) == false )
 	{
 		DEBUG_LOG( LOG::ERRORLOG, "Failed to create application!" );
@@ -111,19 +103,22 @@ bool Engine::LoadApplication( IApp* app )
 // Runs current application
 void Engine::Run()
 {
-
 	while( m_isRunning )
 	{
 		m_engineClock->UpdateFrameTicks();
 		Update( m_engineClock->GetDeltaTime() );
-		Sleep( m_engineClock->GetSleepTime( m_engineClock->GetFPS() ) );
+		// DEBUG_LOG( LOG::INFO, "\tTick: {}", m_engineClock->GetDeltaTime() );
+		if( !m_properties.unlockFPS )
+		{
+			// TODO: Replace Sleep! It's very inaccurate, find out how I can limit fps
+			Sleep( m_engineClock->GetSleepTime( m_engineClock->GetFPS() ) );
+		}
 	}
 
 	if( !m_isRunning )
 	{
 		OnDestroy();
 	}
-
 }
 
 
@@ -204,7 +199,7 @@ void Engine::Update( const float deltaTime )
 
 void Engine::PrintRuntimeInfo()
 {
-	DEBUG_LOG( LOG::INFO, "{} is running @ {}fps", m_engineName, std::to_string( m_fps ) );
+	DEBUG_LOG( LOG::INFO, "{} is running @ {}fps", m_properties.name, m_properties.unlockFPS ? "an unlocked " : std::to_string( m_properties.fps ) );
 
 	if( m_windowManager != nullptr )
 	{

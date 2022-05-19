@@ -3,7 +3,7 @@
 
 int main( int args, char* argv[] )
 {
-	Engine::Get()->Init( "Astraeus Engine", 120, 1280, 720 );
+	Engine::Get()->Init( Engine_Properties( "Astraeus Engine", Extent( 1280, 720 ), 120, true ) );
 
 	Engine::Get()->LoadApplication( new TestFlight() );
 
