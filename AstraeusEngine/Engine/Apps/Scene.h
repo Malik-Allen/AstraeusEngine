@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef SCENE_H
 #define SCENE_H
 

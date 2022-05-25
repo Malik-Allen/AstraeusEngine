@@ -1,4 +1,4 @@
-// MIT License, Copyright (c) Malik Allen
+// Copyright (c) 2022 Malik Allen
 
 #include "EngineClock.h"
 

@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "RendererManager.h"
 #include "../../Apps/SceneManager.h"
 #include "../../World/World.h"

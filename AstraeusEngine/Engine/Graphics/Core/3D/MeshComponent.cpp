@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "MeshComponent.h"
 
 #include "../GraphicsAPI.h"

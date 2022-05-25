@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef WINDOW_H
 #define WINDOW_H
 

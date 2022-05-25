@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef ACTOR_H
 #define ACTOR_H
 

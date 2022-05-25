@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef TRANSFORMCOMPONENT_H
 #define TRANSFORMCOMPONENT_H
 

@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #pragma once
 
 #include <vulkan/vulkan_core.h>

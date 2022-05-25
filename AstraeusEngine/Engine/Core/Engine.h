@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef ENGINE_H
 #define ENGINE_H
 

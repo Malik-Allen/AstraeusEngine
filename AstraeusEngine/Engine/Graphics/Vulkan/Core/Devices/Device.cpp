@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "Device.h"
 #include "PhysicalDevice.h"
 #include "../Queues/Queue.h"

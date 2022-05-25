@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "Engine/Core/Engine.h"
 #include "Apps/TestFlight.h"
 

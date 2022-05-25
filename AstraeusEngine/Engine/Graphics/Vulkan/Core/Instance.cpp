@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "Instance.h"
 #include "Devices/PhysicalDevice.h"
 

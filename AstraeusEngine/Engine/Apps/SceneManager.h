@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 

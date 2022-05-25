@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "Renderer.h"
 #include "Instance.h"
 #include "Devices/Device.h"

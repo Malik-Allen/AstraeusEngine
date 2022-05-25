@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef HIGHRESTIMER_H
 #define HIGHRESTIMER_H
 

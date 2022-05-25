@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #pragma once
 
 #ifndef WINDOW_API

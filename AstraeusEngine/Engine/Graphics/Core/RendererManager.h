@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef RENDERERMANAGER_H
 #define RENDERERMANAGER_H
 

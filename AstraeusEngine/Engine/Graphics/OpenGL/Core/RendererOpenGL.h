@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef RENDEREROPENGL_H
 #define RENDEREROPENGL_H
 

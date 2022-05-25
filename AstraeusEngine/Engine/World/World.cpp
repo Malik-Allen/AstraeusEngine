@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "World.h"
 #include "Objects/Actor.h"
 #include <ECS.h>

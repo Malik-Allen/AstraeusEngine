@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef WINDOWMANAGER_H
 #define WINDOWMANAGER_H
 

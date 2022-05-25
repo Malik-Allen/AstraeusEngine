@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 

@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "RendererOpenGL.h"
 
 #include <DebugLog.h>

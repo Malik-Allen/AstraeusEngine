@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "WindowManager.h"
 #include "GLFW/GlfwWindow.h"
 

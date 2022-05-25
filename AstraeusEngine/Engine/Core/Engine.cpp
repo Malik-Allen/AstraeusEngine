@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "Engine.h"
 #include "Timer/EngineClock.h"
 #include "../Apps/App.h"

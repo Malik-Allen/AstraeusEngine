@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "Queue.h"
 #include "../Devices/Device.h"
 #include "CommandBuffer.h"

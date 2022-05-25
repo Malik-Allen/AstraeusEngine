@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef CAMERA_H
 #define CAMERA_H
 

@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #include "SceneManager.h"
 
 #include "Scene.h"

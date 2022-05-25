@@ -1,3 +1,5 @@
+// Copyright (c) 2022 Malik Allen
+
 #ifndef MESHLOADER_H
 #define MESHLOADER_H
 
