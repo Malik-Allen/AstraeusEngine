@@ -26,6 +26,7 @@ public:
 
 private:
 	glm::vec3	m_position;
+	// TODO: change orientation to quaternion
 	float		m_angle;
 	glm::vec3	m_rotation;
 	glm::vec3	m_scale;

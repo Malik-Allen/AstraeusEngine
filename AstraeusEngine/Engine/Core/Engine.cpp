@@ -22,7 +22,9 @@ Engine::Engine() :
 {}
 
 Engine::~Engine()
-{}
+{
+	OnDestroy();
+}
 
 bool Engine::Init( const Engine_Properties& properties )
 {
@@ -31,7 +33,7 @@ bool Engine::Init( const Engine_Properties& properties )
 
 	DEBUG_LOG( LOG::INFO, "Initializing boot sequence... Please wait..." );
 
-	m_engineClock = new EngineClock();
+	m_engineClock = std::make_unique<EngineClock>();
 	if( m_engineClock == nullptr )
 	{
 		DEBUG_LOG( LOG::FATAL, "Failed to create engine clock!" );
@@ -168,18 +170,6 @@ void Engine::OnDestroy()
 		delete m_app;
 		m_app = nullptr;
 	}
-
-	if( m_windowManager )
-	{
-		m_windowManager->OnDestroy();
-	}
-
-	if( m_engineClock )
-	{
-		delete m_engineClock;
-		m_engineClock = nullptr;
-	}
-
 }
 
 void Engine::Update( const float deltaTime )

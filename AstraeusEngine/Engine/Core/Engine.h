@@ -86,11 +86,12 @@ private:
 
 	Engine_Properties	m_properties;
 
-	EngineClock* m_engineClock;
+	std::unique_ptr<EngineClock> m_engineClock;
 
 	bool				m_isRunning;
 	bool				m_isAppRunning;
 
+	// TODO: Make this a shared ptr, (optional) make an app manager
 	IApp* m_app;
 
 	std::unique_ptr<WindowManager> m_windowManager;

@@ -5,8 +5,6 @@
 
 #include <DebugLog.h>
 
-// TODO: get rid of GLFW dependency
-#include <GLFW/glfw3.h>
 #include <iostream>
 #include <assert.h>
 

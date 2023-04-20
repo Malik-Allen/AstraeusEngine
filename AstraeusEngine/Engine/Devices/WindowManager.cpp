@@ -10,7 +10,9 @@ WindowManager::WindowManager() :
 {}
 
 WindowManager::~WindowManager()
-{}
+{
+	OnDestroy();
+}
 
 bool WindowManager::Create_Window( Window_Properties properties )
 {

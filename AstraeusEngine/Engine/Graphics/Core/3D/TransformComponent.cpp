@@ -24,6 +24,7 @@ TransformComponent::TransformComponent( glm::vec3 position, float angle, glm::ve
 	m_scale( scale )
 {
 	glm::mat4 model = glm::mat4( 1.0f );
+	// Order of operations matters here!
 	model = glm::translate( model, m_position );
 	model = glm::rotate( model, m_angle, m_rotation );
 	model = glm::scale( model, m_scale );
