@@ -11,7 +11,7 @@
 // some opengl headers
 
 #elif GRAPHICS_API == GRAPHICS_VULKAN
-#include "../../Graphics/Vulkan/Core/Instance.h"
+#include "../../Graphics/Vulkan/Core/Initialization/Instance.h"
 
 #endif
 

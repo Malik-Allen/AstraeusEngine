@@ -147,7 +147,9 @@ namespace Hephaestus
 	}
 
 	Device::~Device()
-	{}
+	{
+
+	}
 
 	bool Device::OnCreate()
 	{
@@ -156,7 +158,12 @@ namespace Hephaestus
 	}
 
 	void Device::OnDestroy()
-	{}
+	{
+		if( m_logicaldevice != VK_NULL_HANDLE )
+		{
+			vkDestroyDevice( m_logicaldevice, nullptr );
+		}
+	}
 
 	uint32_t Device::GetQueueFamilyIndex( VkQueueFlagBits queueFlags )
 	{

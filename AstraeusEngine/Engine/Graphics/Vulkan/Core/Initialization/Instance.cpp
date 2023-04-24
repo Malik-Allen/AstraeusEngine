@@ -1,7 +1,7 @@
 // Copyright (c) 2022 Malik Allen
 
 #include "Instance.h"
-#include "Devices/PhysicalDevice.h"
+#include "PhysicalDevice.h"
 
 #include <DebugLog.h>
 

@@ -24,7 +24,9 @@ bool TestFlight::IApp_OnCreate()
 
 	TransformComponent* transform = actor1->FindComponentByClass<TransformComponent>();
 
-	DEBUG_LOG( LOG::INFO, "TransformComponent:\tPos: {}\tRot: {}\tScale: {}", glm::to_string( transform->GetPosition() ), glm::to_string( transform->GetRotation() ), glm::to_string( transform->GetScale() ) );
+	DEBUG_LOG( LOG::INFO, "TransformComponent:\tPos: {}\tRot: {}\tScale: {}", 
+		glm::to_string( transform->GetPosition() ), glm::to_string( transform->GetRotation() ), glm::to_string( transform->GetScale() ) 
+	);
 
 	return true;
 }

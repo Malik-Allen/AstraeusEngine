@@ -66,16 +66,16 @@
     <ClCompile Include="Engine\Graphics\Vulkan\Core\3D\Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Graphics\Vulkan\Core\Instance.cpp">
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Initialization\Instance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Graphics\Vulkan\Debug\Debug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Graphics\Vulkan\Core\Devices\Device.cpp">
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Initialization\Device.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Graphics\Vulkan\Core\Devices\PhysicalDevice.cpp">
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Initialization\PhysicalDevice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Devices\GLFW\GlfwWindow.cpp">
@@ -87,13 +87,16 @@
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Queues\Queue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Graphics\Vulkan\Core\Queues\CommandBuffer.cpp">
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Command\CommandBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Graphics\Vulkan\Core\Queues\CommandPool.cpp">
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Command\CommandPool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Apps\TestFlight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Presentation\Swapchain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -158,16 +161,16 @@
     <ClInclude Include="Engine\Graphics\Vulkan\Core\3D\Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Graphics\Vulkan\Core\Instance.h">
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Initialization\Instance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Graphics\Vulkan\Debug\Debug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Graphics\Vulkan\Core\Devices\Device.h">
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Initialization\Device.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Graphics\Vulkan\Core\Devices\PhysicalDevice.h">
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Initialization\PhysicalDevice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Devices\GLFW\GlfwWindow.h">
@@ -185,16 +188,22 @@
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Queues\Queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Graphics\Vulkan\Core\Queues\CommandBuffer.h">
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Command\CommandBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Graphics\Vulkan\Core\Queues\CommandPool.h">
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Command\CommandPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine\World\Objects\ActorCore.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Apps\TestFlight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Presentation\Swapchain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Utilities\Helpers\Helpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

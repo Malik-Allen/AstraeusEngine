@@ -1,9 +1,10 @@
 // Copyright (c) 2022 Malik Allen
 
 #include "Renderer.h"
-#include "Instance.h"
-#include "Devices/Device.h"
 #include "../Debug/Debug.h"
+#include "Initialization/Instance.h"
+#include "Initialization/Device.h"
+#include "Presentation/Swapchain.h"
 
 #include "../../../Devices/Window.h"
 
@@ -56,7 +57,7 @@ namespace Hephaestus
 
 		// Mandatory swapchain extension
 		AddDeviceExtension( VK_KHR_SWAPCHAIN_EXTENSION_NAME );
-		
+
 		Device_Constructor deviceConstructor( gpu, m_surface, GetDeviceExtensions() );
 		m_device = std::make_unique<Device>( deviceConstructor );
 
@@ -71,7 +72,7 @@ namespace Hephaestus
 		{
 			m_device->OnDestroy();
 		}
-		
+
 		vkDestroySurfaceKHR( m_instance->GetVkInstance(), m_surface, nullptr );
 
 		if( m_instance )
