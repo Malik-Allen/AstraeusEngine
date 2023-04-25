@@ -336,7 +336,10 @@ namespace Hephaestus
 		m_surface( other.m_surface ),
 		m_swapchain( other.m_swapchain ),
 		m_properties( other.m_properties )
-	{}
+	{
+		other.m_swapchain = VK_NULL_HANDLE;
+		other.m_surface = VK_NULL_HANDLE;
+	}
 
 	Swapchain::~Swapchain()
 	{

@@ -171,8 +171,10 @@
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Initialization\Instance.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Command\CommandBuffer.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Command\CommandPool.cpp" />
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\Presentation\ImageView.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Presentation\Swapchain.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Core\Queues\Queue.cpp" />
+    <ClCompile Include="Engine\Graphics\Vulkan\Core\ResourceManagement\Image.cpp" />
     <ClCompile Include="Engine\Graphics\Vulkan\Debug\Debug.cpp" />
     <ClCompile Include="Engine\World\Objects\Actor.cpp" />
     <ClCompile Include="Engine\World\World.cpp" />
@@ -203,8 +205,10 @@
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Initialization\Instance.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Command\CommandBuffer.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Command\CommandPool.h" />
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\Presentation\ImageView.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Presentation\Swapchain.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Queues\Queue.h" />
+    <ClInclude Include="Engine\Graphics\Vulkan\Core\ResourceManagement\Image.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Core\Utilities\Helpers\Helpers.h" />
     <ClInclude Include="Engine\Graphics\Vulkan\Debug\Debug.h" />
     <ClInclude Include="Engine\World\Objects\Actor.h" />

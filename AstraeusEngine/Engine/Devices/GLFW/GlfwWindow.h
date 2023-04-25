@@ -26,6 +26,7 @@ public:
 	bool InitGlad();
 
 #elif GRAPHICS_API == GRAPHICS_VULKAN
+	// TODO: Consider adding a swapchain reference to this class and some swapchain functionality
 	virtual VkSurfaceKHR CreateSurface( Hephaestus::Instance& instance ) override final;
 	virtual std::vector<const char*> GetSurfaceExtensions() override final;
 #endif

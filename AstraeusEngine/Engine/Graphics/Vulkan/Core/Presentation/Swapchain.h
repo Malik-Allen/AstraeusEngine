@@ -32,6 +32,7 @@ namespace Hephaestus
 
 	struct Swapchain_Constructor
 	{
+		// TODO: Add support for 'old swapchain'
 		explicit Swapchain_Constructor( 
 			Device& device,
 			PhysicalDevice& physicalDevice,
